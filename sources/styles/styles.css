@@ -102,7 +102,24 @@ nav .menu__iconos--modifier:hover {
     font-size: 10px;
   }
 }
+@media (max-width: 480px) {
+  nav .menu {
+    font-size: 8px;
+  }
+  nav .menu__iconos {
+    margin: 0px;
+  }
+  nav .menu__iconos--modifier {
+    font-size: 10px;
+  }
+}
 
+@media (max-width: 480px) {
+  nav {
+    padding: 0;
+    height: 20px;
+  }
+}
 header .encabezado {
   position: relative;
   height: 400px;
@@ -167,6 +184,14 @@ header .encabezado h2 {
     font-size: 15px;
   }
 }
+@media (max-width: 480px) {
+  header .encabezado h1 {
+    font-size: 30px;
+  }
+  header .encabezado h2 {
+    font-size: 12px;
+  }
+}
 
 main {
   /*Pagina Servicios*/
@@ -219,7 +244,46 @@ main .resumen .imagen__resumen {
     height: 359px;
   }
 }
+@media (max-width: 655px) {
+  main .resumen .texto__resumen {
+    height: 100px;
+    width: 440px;
+    font-size: 12px;
+  }
+  main .resumen .imagen__resumen {
+    width: 466px;
+    height: 359px;
+  }
+}
+@media (max-width: 480px) {
+  main .resumen .texto__resumen {
+    height: 100px;
+    width: 420px;
+    font-size: 11px;
+  }
+  main .resumen .imagen__resumen {
+    width: 420px;
+    height: 359px;
+  }
+}
 @media (max-width: 900px) {
+  main .resumen {
+    width: auto;
+    height: 520px;
+    grid-template-areas: "resumen" "foto_resumen ";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+  }
+}
+@media (max-width: 655px) {
+  main .resumen {
+    grid-template-areas: "resumen" "foto_resumen ";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+@media (max-width: 480px) {
   main .resumen {
     width: auto;
     height: 520px;
@@ -284,18 +348,25 @@ main .clientes .clientes__grid .clientes__img {
   margin-right: 10px;
 }
 @media (max-width: 900px) {
+  main .clientes .clientes__grid .clientes__img {
+    width: 155px;
+    height: 122px;
+  }
+}
+@media (max-width: 900px) {
   main .clientes .clientes__texto {
     width: 300px;
     font-size: 15px;
-  }
-  main .clientes .clientes__img {
-    width: 155px;
-    height: 122px;
   }
   main .clientes .clientes__grid {
     grid-template-areas: ". cliente_1 cliente_2 ." ". cliente_3 cliente_4 ." ". cliente_5 cliente_6 .";
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 655px) {
+  main .clientes .clientes {
+    margin-top: 50px;
   }
 }
 main .QuienesSomos {
@@ -366,6 +437,46 @@ main .QuienesSomos .QuienesSomos__imagen {
   main .QuienesSomos .QuienesSomos__imagen {
     width: 300px;
     height: 400px;
+  }
+}
+@media (max-width: 655px) {
+  main .QuienesSomos .QuienesSomos__titulo {
+    font-size: 25px;
+    text-align: center;
+  }
+  main .QuienesSomos .QuienesSomos__parrafo {
+    padding-top: 10px;
+    font-size: 15px;
+  }
+  main .QuienesSomos .QuienesSomos__parrafo--modifier {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  main .QuienesSomos .QuienesSomos__titulo {
+    font-size: 20px;
+    margin: 10px;
+    height: 50px;
+  }
+  main .QuienesSomos .QuienesSomos__parrafo {
+    font-size: 12px;
+  }
+  main .QuienesSomos .QuienesSomos__parrafo--modifier {
+    font-size: 12px;
+  }
+  main .QuienesSomos .QuienesSomos__imagen {
+    width: 250px;
+    height: 300px;
+  }
+}
+@media (max-width: 655px) {
+  main .QuienesSomos {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    grid-template-areas: "QuienesSomos_titulo" "QuienesSomos_imagen" "QuienesSomos_parrafo";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr;
+    justify-items: center;
   }
 }
 main .Vision {
@@ -685,111 +796,13 @@ footer .pie__centrar {
     margin-top: 3px;
   }
 }
+@media (max-width: 480px) {
+  footer .pie__copyright {
+    font-size: 8px;
+  }
+}
 
 /*Media Query's*/
-@media (max-width: 655px) {
-  .resumen {
-    width: auto;
-    height: 520px;
-    grid-template-areas: "resumen" "foto_resumen ";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
-  }
-  .texto__resumen {
-    height: 100px;
-    width: 440px;
-    font-size: 12px;
-  }
-  .imagen__resumen {
-    width: 466px;
-    height: 359px;
-  }
-  .clientes {
-    margin-top: 50px;
-  }
-  .clientes__texto {
-    font-size: 12px;
-  }
-  .QuienesSomos {
-    height: 800px;
-    display: grid;
-    grid-template-areas: "QuienesSomos_titulo" "QuienesSomos_imagen" "QuienesSomos_parrafo";
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 2fr 1fr;
-    justify-items: center;
-  }
-  .QuienesSomos__titulo {
-    font-size: 25px;
-    text-align: center;
-  }
-  .QuienesSomos__parrafo {
-    font-size: 15px;
-  }
-  .QuienesSomos__parrafo--modifier {
-    font-size: 15px;
-  }
-}
-@media (max-width: 500px) {
-  h1 {
-    font-size: 40px;
-  }
-  h2 {
-    font-size: 15px;
-  }
-  nav {
-    padding: 0;
-    height: 20px;
-  }
-  .menu {
-    font-size: 8px;
-  }
-  .menu__iconos {
-    margin: 0px;
-  }
-  .menu__iconos--modifier {
-    font-size: 10px;
-  }
-  .pie__copyright {
-    font-size: 8px;
-  }
-  .resumen {
-    width: auto;
-    height: 520px;
-    grid-template-areas: "resumen" "foto_resumen ";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
-  }
-  .texto__resumen {
-    height: 100px;
-    width: 420px;
-    font-size: 11px;
-  }
-  .imagen__resumen {
-    width: 400px;
-    height: 300px;
-  }
-  .clientes {
-    margin-top: 50px;
-  }
-  .clientes__texto {
-    font-size: 12px;
-  }
-  .QuienesSomos__titulo {
-    font-size: 20px;
-  }
-  .QuienesSomos__parrafo {
-    font-size: 12px;
-  }
-  .QuienesSomos__parrafo--modifier {
-    font-size: 12px;
-  }
-  .QuienesSomos__imagen {
-    width: 250px;
-    height: 300px;
-  }
-}
 @keyframes mover {
   0% {
     transform: translate(0px, 1px) rotate(0deg);

@@ -116,10 +116,29 @@ nav{
             
         }   
     }
+    @media (max-width:480px){
+        .menu{
+            font-size: 8px;
+        
+        }
+        .menu__iconos{
+            margin: 0px;
+        }
+        .menu__iconos--modifier{
+            font-size: 10px;
+            
+        }
+    }
+}
+@media (max-width:480px){
+    
+    nav{
+        padding: 0;
+        height: 20px;
+    }
 }
 header{
     .encabezado{
-
         #titulo{
             grid-area:titulo;
         }
@@ -153,7 +172,7 @@ header{
     
         h1{
             position: relative;
-            font-family:'Keania One',sans-serif;
+            font-family:$letra-marca;
             font-weight:400;
             font-size: 96px;
             text-align: center;
@@ -163,7 +182,7 @@ header{
         }
         h2{
             position: relative;
-            font-family:'K2D',sans-serif;
+            font-family:$letra-texto;
             font-weight: 100%;
             font-size: 24px;
             line-height: 31px;
@@ -186,6 +205,14 @@ header{
             }
             h2{
                 font-size: 15px;
+            }
+        }
+        @media (max-width:480px){
+            h1{   
+                font-size: 30px;
+            }
+            h2{
+                font-size: 12px;
             }
         }
         
@@ -220,7 +247,7 @@ main{
             justify-self: center;
             border-top: solid 2px $color-secundario;
             border-bottom: solid 2px $color-secundario;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 24px;
@@ -247,8 +274,30 @@ main{
                 height: 359px;
             }
         }
-
-        
+        @media (max-width:655px){
+            
+            .texto__resumen{
+                height: 100px;
+                width: 440px;
+                font-size: 12px;
+            }
+            .imagen__resumen{
+                width: 466px;
+                height: 359px;
+            }
+        }
+        @media (max-width:480px){
+            
+            .texto__resumen{
+                height: 100px;
+                width: 420px;
+                font-size: 11px;
+            }
+            .imagen__resumen{
+                width: 420px;
+                height: 359px;
+            }
+        }
        
     }
     @media (max-width:900px){
@@ -264,6 +313,28 @@ main{
         }
         
     }
+    @media (max-width:655px){
+        .resumen{
+            grid-template-areas: 
+            "resumen"
+            "foto_resumen ";
+            grid-template-columns:1fr;
+            grid-template-rows:1fr;
+        }
+    }
+    @media (max-width:480px){
+    
+        .resumen{
+            width: auto;
+            height:520px;
+            grid-template-areas: 
+            "resumen"
+            "foto_resumen ";
+            grid-template-columns:1fr;
+            grid-template-rows:1fr;
+            justify-items: center;
+        }
+    }
     .clientes{
         width: auto;
         height: auto;
@@ -275,7 +346,7 @@ main{
             display: flex;
             justify-content: space-around;
             margin: auto;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 24px;
@@ -320,6 +391,12 @@ main{
                 margin-bottom: 30px;
                 margin-right: 10px;
             }
+            @media (max-width:900px){
+                .clientes__img{
+                    width: 155px;
+                    height: 122px;
+                }
+            }
         
         }
         @media (max-width:900px){
@@ -327,12 +404,6 @@ main{
                 width: 300px;
                 font-size: 15px;
             }
-        
-            .clientes__img{
-                width: 155px;
-                height: 122px;
-            }
-            
             
             .clientes__grid{
                 grid-template-areas: 
@@ -341,6 +412,12 @@ main{
                 ". cliente_5 cliente_6 .";
                 grid-template-columns:0.5fr 0.5fr 0.5fr 0.5fr;
                 grid-template-rows:1fr 1fr 1fr;
+            }
+        }
+        @media (max-width:655px){
+
+            .clientes{
+               margin-top: 50px;
             }
         }
         
@@ -373,7 +450,7 @@ main{
             margin: 40px 0px 0px 20px;
             width:80%;
             height: 60px;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 32px;
@@ -385,7 +462,7 @@ main{
         .QuienesSomos__parrafo{
             width:90%;
             margin: 0px 0px 0px 20px;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
@@ -395,7 +472,7 @@ main{
            
         }
         .QuienesSomos__parrafo--modifier{
-            font-family: 'Keania One',sans-serif;
+            font-family: $letra-marca;
             font-style: bold;
             font-size: 23px;
             line-height: 24px;
@@ -432,7 +509,61 @@ main{
 
         
         }
+        @media (max-width:655px){
+            .QuienesSomos__titulo{
+                font-size: 25px;
+                text-align: center;
+            }
+            
+            .QuienesSomos__parrafo{
+                padding-top: 10px;
+                font-size: 15px;
+            }
+            
+            .QuienesSomos__parrafo--modifier{
+                font-size: 15px;
+            }
+      
+        }
+        @media (max-width:480px){
+    
+   
+            .QuienesSomos__titulo{
+                font-size: 20px;
+                margin:10px;
+                height: 50px;
+            }
+            
+            .QuienesSomos__parrafo{
+                font-size: 12px;
+            }
+            
+            .QuienesSomos__parrafo--modifier{
+                font-size: 12px;
+            }
         
+            .QuienesSomos__imagen{
+                width: 250px;
+                height: 300px;
+            
+            }
+        }
+        
+        
+    }
+    @media (max-width:655px){
+        .QuienesSomos{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            grid-template-areas: 
+                        "QuienesSomos_titulo"
+                        "QuienesSomos_imagen"
+                        "QuienesSomos_parrafo";
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.1fr 1fr 1fr;
+            justify-items: center;
+            
+        }
     }
 
     .Vision{
@@ -459,7 +590,7 @@ main{
        
             width: 90%;
             height: 104px;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 32px;
@@ -472,7 +603,7 @@ main{
             
             width: 90%;
             height: 130px;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
@@ -480,7 +611,7 @@ main{
             color: $color-primario;
 
             .Vision__parrafo--modifier{
-                font-family: 'Keania One',sans-serif;
+                font-family: $letra-marca;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 23px;
@@ -527,7 +658,7 @@ main{
         .Servicios__titulo{
             width: auto;
             height: auto;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 600;
             font-size: 32px;
@@ -592,7 +723,7 @@ main{
             width:auto;
             height:auto;
             margin-left: 30px;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 600;
             font-size: 32px;
@@ -634,7 +765,7 @@ main{
             width: auto;
             height: auto;
             text-align: left;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 600;
             font-size: 32px;
@@ -646,7 +777,7 @@ main{
             width: auto;
             height: 50%;
             text-align: left;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
@@ -656,7 +787,7 @@ main{
         }
         
         .Contacto__telefono{
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 600;
             font-size: 32px;
@@ -689,7 +820,7 @@ main{
         .Contacto__boton{
             width: 168px;
             height: auto;
-            font-family: 'K2D',sans-serif;
+            font-family: $letra-texto;
             font-style: normal;
             font-weight: 600;
             font-size: 30px;
@@ -733,7 +864,7 @@ footer{
     .pie__copyright{
         width: 100%;
         height:18px;
-        font-family: 'K2D',sans-serif;
+        font-family: $letra-texto;
         font-style: normal;
         font-weight: 600;
         font-size: 14px;
@@ -744,7 +875,7 @@ footer{
     .pie__marca{
         width: 100%;
         height: 19px;
-        font-family: 'Keania One',sans-serif;
+        font-family: $letra-marca;
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -797,147 +928,17 @@ footer{
             margin-top: 3px;
         }
     }
-    
+    @media (max-width:480px){
+        .pie__copyright{
+            font-size: 8px;
+        }  
+    }        
 }
 
 
 /*Media Query's*/
 
 
-@media (max-width:655px){
-
-    
-    .resumen{
-        width: auto;
-        height:520px;
-        grid-template-areas: 
-        "resumen"
-        "foto_resumen ";
-        grid-template-columns:1fr;
-        grid-template-rows:1fr;
-        justify-items: center;
-    }
-    
-    .texto__resumen{
-        height: 100px;
-        width: 440px;
-        font-size: 12px;
-    }
-    .imagen__resumen{
-        width: 466px;
-        height: 359px;
-    }
-
-
-    .clientes{
-       margin-top: 50px;
-    }
-    .clientes__texto{
-        font-size: 12px;
-    }
-    .QuienesSomos{
-        height: 800px;
-        display: grid;
-        grid-template-areas: 
-                    "QuienesSomos_titulo"
-                    "QuienesSomos_imagen"
-                    "QuienesSomos_parrafo";
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 2fr 1fr;
-        justify-items: center;
-        
-    }
-    .QuienesSomos__titulo{
-        font-size: 25px;
-        text-align: center;
-    }
-    
-    .QuienesSomos__parrafo{
-        font-size: 15px;
-    }
-    
-    .QuienesSomos__parrafo--modifier{
-        font-size: 15px;
-    }
-    
-
-
-}
-
-@media (max-width:500px){
-    h1{   
-        font-size: 40px;
-    }
-    h2{
-        font-size: 15px;
-    }
-    nav{
-        padding: 0;
-        height: 20px;
-    }
-
-
-    .menu{
-        font-size: 8px;
-    
-    }
-    .menu__iconos{
-        margin: 0px;
-    }
-    .menu__iconos--modifier{
-        font-size: 10px;
-        
-    }
-    .pie__copyright{
-        font-size: 8px;
-    }  
-     
-    
-    .resumen{
-        width: auto;
-        height:520px;
-        grid-template-areas: 
-        "resumen"
-        "foto_resumen ";
-        grid-template-columns:1fr;
-        grid-template-rows:1fr;
-        justify-items: center;
-    }
-    
-    .texto__resumen{
-        height: 100px;
-        width: 420px;
-        font-size: 11px;
-    }
-    .imagen__resumen{
-        width: 400px;
-        height: 300px;
-    }
-    .clientes{
-       margin-top: 50px;
-    }
-    .clientes__texto{
-        font-size: 12px;
-    }
-
-    .QuienesSomos__titulo{
-        font-size: 20px;
-    }
-    
-    .QuienesSomos__parrafo{
-        font-size: 12px;
-    }
-    
-    .QuienesSomos__parrafo--modifier{
-        font-size: 12px;
-    }
-
-    .QuienesSomos__imagen{
-        width: 250px;
-        height: 300px;
-    
-    }
-}
 @keyframes mover{
     0%{
         transform: translate(0px,1px) rotate(0deg);
