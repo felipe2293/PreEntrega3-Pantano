@@ -3,6 +3,7 @@
 @import url('http://fonts.cdnfonts.com/css/k2d');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import "colores";
+@import "tipografia";
 
 /*root*/
 *{
@@ -50,8 +51,657 @@ nav{
             text-decoration: none;
         }
     }
+    .menu{
+        width:auto;
+        height: auto;
+        display: inline;
+        margin: 10px;
+        font-family: $letra-texto;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color:  $color-primario;
+        transition:background 1s;
+        border-radius: 5px;
+    
+        &:hover{
+            background:  $color-primario;
+        }
+        a:hover{
+            color: white;
+        }
+        
+    }
+    /*transformacion al pasar mouse por menu*/
+    
+    .menu__iconos{
+        width: auto;
+        height: auto;
+        display: inline;  
+        margin: 3px;  
+    }
+    .menu__iconos--modifier{
+        font-size: 28px;
+        color:$color-primario;
+        margin-right: 4px;
+    
+        &:hover{
+            animation: mover 0.3s;
+            animation-iteration-count: infinite;
+        }
+    }
+    @media (max-width:900px){
+   
+        .menu{
+            font-size: 15px;
+            margin: 5px;
+        
+        }
+        .menu__iconos--modifier{
+            font-size: 15px;
+        }   
+    }
+    @media (max-width:655px){
+
+        .menu{
+            font-size: 10px;
+        
+        }
+        .menu__iconos{
+            margin: 0px;
+        }
+        .menu__iconos--modifier{
+            font-size: 10px;
+            
+        }   
+    }
+}
+header{
+    .encabezado{
+
+        #titulo{
+            grid-area:titulo;
+        }
+        #subtitulo{
+            grid-area:subtitulo;
+        }
+    
+        position: relative;
+        height: 400px;
+        width: 100%;
+        align-items: center;
+        display: grid;
+        grid-template-areas: 
+                            ". titulo ."
+                            ". subtitulo .";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows:1fr 1fr;
+    
+        /*opacidad a la imagen sin que afecte al texto*/
+        &::before{
+            content: "";
+            background-image:url(../../sources/img/header.jpg);
+            background-size:cover;
+            position: absolute;   
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.7;
+        }
+    
+        h1{
+            position: relative;
+            font-family:'Keania One',sans-serif;
+            font-weight:400;
+            font-size: 96px;
+            text-align: center;
+            margin-top: 90px;
+            line-height: 117px;
+            color: $color-primario;
+        }
+        h2{
+            position: relative;
+            font-family:'K2D',sans-serif;
+            font-weight: 100%;
+            font-size: 24px;
+            line-height: 31px;
+            margin-bottom: 60px;
+            text-align: center;
+            color: $color-secundario;
+        }
+        @media (max-width:900px){
+            h1{   
+                font-size: 60px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width:655px){
+            h1{   
+                font-size: 40px;
+            }
+            h2{
+                font-size: 15px;
+            }
+        }
+        
+        
+    }
 }
 
+main{
+    
+    .resumen{
+        #resumen{
+            grid-area: resumen;
+        }
+        #foto_resumen{
+            grid-area: foto_resumen;
+        }
+        
+        width: auto;
+        height:520px;
+        display: grid;
+        align-items: center;
+        margin-top: 30px;
+        grid-template-areas: 
+        "resumen foto_resumen ";
+        grid-template-columns:1.5fr 2fr;
+        grid-template-rows:1fr;
+        justify-items: center;
+
+        .texto__resumen{
+            width: 515px;
+            height: 186px;
+            justify-self: center;
+            border-top: solid 2px $color-secundario;
+            border-bottom: solid 2px $color-secundario;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+            color: $color-primario;
+            
+                
+        
+        }
+        .imagen__resumen{
+            width: 596px;
+            height: 459px;
+            border-radius:10px;
+            justify-self: center;
+            
+        }
+        @media (max-width:900px){
+            .texto__resumen{
+                height: 130px;
+                font-size: 15px;
+            }
+            .imagen__resumen{
+                width: 496px;
+                height: 359px;
+            }
+        }
+
+        
+       
+    }
+    @media (max-width:900px){
+        .resumen{
+            width: auto;
+            height:520px;
+            grid-template-areas: 
+            "resumen"
+            "foto_resumen ";
+            grid-template-columns:1fr;
+            grid-template-rows:1fr;
+            justify-items: center;
+        }
+        
+    }
+    .clientes{
+        width: auto;
+        height: auto;
+        margin-top: 100px;
+        align-items: center;
+
+        .clientes__texto{
+            width: 500px;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+            border-top: solid 1px $color-secundario;
+            border-bottom: solid 1px $color-secundario;
+            color: $color-primario;
+        }
+        .clientes__grid{
+            #cliente_1{
+                grid-area:cliente_1;
+            }
+            #cliente_2{
+                grid-area:cliente_2;
+            }
+            #cliente_3{
+                grid-area:cliente_3;
+            }
+            #cliente_4{
+                grid-area:cliente_4;
+            }
+            #cliente_5{
+                grid-area:cliente_5;
+            }
+            #cliente_6{
+                grid-area: cliente_6;
+            }
+            display: grid;
+            grid-template-areas: 
+            ". cliente_1 cliente_2 cliente_3 ."
+            ". cliente_4 cliente_5 cliente_6 .";
+            grid-template-columns:0.5fr 0.7fr 0.7fr 0.7fr 0.5fr;
+            grid-template-rows:1fr 1fr;
+            justify-items: center;
+            margin-top: 20px;
+
+            .clientes__img{
+                width: 255px;
+                height: 192px;
+                justify-self: center;
+                border-radius: 10px;
+                margin-bottom: 30px;
+                margin-right: 10px;
+            }
+        
+        }
+        @media (max-width:900px){
+            .clientes__texto{
+                width: 300px;
+                font-size: 15px;
+            }
+        
+            .clientes__img{
+                width: 155px;
+                height: 122px;
+            }
+            
+            
+            .clientes__grid{
+                grid-template-areas: 
+                ". cliente_1 cliente_2 ."
+                ". cliente_3 cliente_4 ."
+                ". cliente_5 cliente_6 .";
+                grid-template-columns:0.5fr 0.5fr 0.5fr 0.5fr;
+                grid-template-rows:1fr 1fr 1fr;
+            }
+        }
+        
+    }
+   
+
+    .QuienesSomos{
+        #QuienesSomos_titulo{
+            grid-area:QuienesSomos_titulo;
+        }
+        #QuienesSomos_parrafo{
+            grid-area:QuienesSomos_parrafo;
+        }
+        
+        #QuienesSomos_imagen{
+            grid-area: QuienesSomos_imagen;
+        }
+        width: auto;
+        height: auto;
+        display: grid;
+        margin-top: 50px;
+        margin-bottom: 60px;
+        grid-template-areas: 
+                    "QuienesSomos_titulo QuienesSomos_imagen"
+                    "QuienesSomos_parrafo QuienesSomos_imagen";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+
+        .QuienesSomos__titulo{
+            margin: 40px 0px 0px 20px;
+            width:80%;
+            height: 60px;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 31px;
+            color: $color-primario;
+            justify-items: center;
+        }
+        
+        .QuienesSomos__parrafo{
+            width:90%;
+            margin: 0px 0px 0px 20px;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: $color-primario;
+
+           
+        }
+        .QuienesSomos__parrafo--modifier{
+            font-family: 'Keania One',sans-serif;
+            font-style: bold;
+            font-size: 23px;
+            line-height: 24px;
+        }
+        .QuienesSomos__imagen{
+            width: 400px;
+            height: 500px;
+            border-radius: 9px;
+            align-self: center;
+        
+        }
+        
+        @media (max-width:900px){
+
+            .QuienesSomos__titulo{
+                font-size: 23px;
+                padding-bottom: 10px;
+                height: 118px;
+            }
+            
+            .QuienesSomos__parrafo{
+                font-size: 15px;
+            }
+            
+            .QuienesSomos__parrafo--modifier{
+                font-size: 15px;
+            }
+            
+            .QuienesSomos__imagen{
+                width: 300px;
+                height: 400px;
+            
+            }
+
+        
+        }
+        
+    }
+
+    .Vision{
+        #Vision_titulo{
+            grid-area:Vision_titulo;
+        }
+        #Vision_parrafo{
+            grid-area:Vision_parrafo;
+        }
+        #Vision_imagen{
+            grid-area:Vision_imagen;
+        }
+        width: auto;
+        height: 600px;
+        display: grid;
+        grid-template-areas: 
+                    "Vision_titulo Vision_imagen"
+                    "Vision_parrafo Vision_imagen";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3fr;
+        justify-items: center;
+
+        .Vision__titulo{
+       
+            width: 90%;
+            height: 104px;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 31px;
+            color: $color-primario;
+            align-self: center;
+        }
+        
+        .Vision__parrafo{
+            
+            width: 90%;
+            height: 130px;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: $color-primario;
+
+            .Vision__parrafo--modifier{
+                font-family: 'Keania One',sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 23px;
+                line-height: 24px;
+            }
+        
+        }
+        
+        .Vision__imagen{
+            width: 420px;
+            height: 450px;
+            border-radius: 9px;
+            margin-top: 20px;
+        }
+        
+    }
+   
+    /*Pagina Servicios*/
+    
+    .Servicios{
+        #Servicios_titulo_1{
+            grid-area: Servicios_titulo_1;
+        }
+        #Servicios_lista_1{
+            grid-area: Servicios_lista_1;
+        }
+        #Servicios_titulo_2{
+            grid-area: Servicios_titulo_2;
+        }
+        #Servicios_lista_2{
+            grid-area: Servicios_lista_2;
+        }
+        width: auto;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display:grid;
+        grid-template-areas: 
+        "Servicios_titulo_1 Servicios_titulo_2"
+        "Servicios_lista_1 Servicios_lista_2";
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:0.3fr 0.3fr;
+        justify-items: center;
+        .Servicios__titulo{
+            width: auto;
+            height: auto;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 42px;
+            text-align: center;
+            color: $color-primario;
+            justify-self: center;
+        }
+        .Servicios__lista{
+            width: auto;
+            height: auto;
+            margin-left: 40px;
+            font-family: 'K2D';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: $color-primario;
+            justify-self: center;
+        
+        }
+        
+        .Servicios--modifier{
+            border-left: solid 2px $color-secundario;
+        }
+    }
+
+    /*Pagina Proyectos*/
+    
+    .Proyectos{
+        #Proyectos_titulo_1{
+            grid-area: Proyectos_titulo_1;
+        }
+        #Proyectos_titulo_2{
+            grid-area:Proyectos_titulo_2;
+        }
+        #Proyectos_titulo_3{
+            grid-area:Proyectos_titulo_3;
+        }
+        #Proyectos_parrafo_1{
+            grid-area:Proyectos_parrafo_1;
+        }
+        #Proyectos_parrafo_2{
+            grid-area: Proyectos_parrafo_2;
+        }
+        #Proyectos_parrafo_3{
+            grid-area: Proyectos_parrafo_3;
+        }
+        width: auto;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-areas: 
+        "Proyectos_titulo_1 Proyectos_titulo_2 Proyectos_titulo_3"
+        "Proyectos_parrafo_1 Proyectos_parrafo_2 Proyectos_parrafo_3";
+        grid-template-columns:1fr 1fr 1fr;
+        grid-template-rows:0.3fr 0.3fr;
+        justify-items: center;
+
+        .Proyectos__titulo{
+            width:auto;
+            height:auto;
+            margin-left: 30px;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 42px;
+            text-align: center;
+            color: $color-primario;
+        }
+        .Proyectos__parrafo{
+            width:auto;
+            height:auto;
+            margin-left: 30px;
+            font-family: 'K2D';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: $color-primario;
+        }
+        .Proyectos--modifier{
+            border-left: solid 2px $color-secundario;
+            padding-left: 10px;
+        }
+    
+    }
+
+    /*Pagina Contacto*/
+    
+    .Contacto{
+        width: auto;
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .Contacto--modifier{
+            border-left: solid 2px $color-secundario;
+            padding-left: 20px;
+        }
+        
+        .Contacto__titulo{
+            width: auto;
+            height: auto;
+            text-align: left;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 42px;
+            color: $color-primario;
+        }
+        
+        .Contacto__parrafo{
+            width: auto;
+            height: 50%;
+            text-align: left;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: $color-primario;
+        
+        }
+        
+        .Contacto__telefono{
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 42px;
+            color: $color-primario;
+        }
+        .Contacto__telefono--modifier{
+            font-size: 62px;
+        }
+        
+        
+        .Contacto__formulario--texto{
+            width: auto;
+            height: auto;
+            font-family: 'K2D';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+            color: $color-primario;
+        }
+        
+        .Contacto__formulario--respuesta{
+            width: 400px;
+            height: auto;
+            background: $color-terciario;
+            border: 1px solid $color-secundario;
+        }
+        
+        .Contacto__boton{
+            width: 168px;
+            height: auto;
+            font-family: 'K2D',sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 42px;
+            border-radius: 9px;
+            background: $color-primario;
+            color: white;
+            text-align: center;
+        }
+    }
+  
+}
 
 footer{
 
@@ -129,681 +779,33 @@ footer{
     .pie__centrar{
         margin-left: 0%;
     }
-    
-}
 
-/*Clases*/
-
-/*Encabezado, menu y pie de pagina general*/
-.encabezado{
-
-    #titulo{
-        grid-area:titulo;
-    }
-    #subtitulo{
-        grid-area:subtitulo;
-    }
-
-    position: relative;
-    height: 400px;
-    width: 100%;
-    align-items: center;
-    display: grid;
-    grid-template-areas: 
-                        ". titulo ."
-                        ". subtitulo .";
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows:1fr 1fr;
-
-    /*opacidad a la imagen sin que afecte al texto*/
-    &::before{
-        content: "";
-        background-image:url(../../sources/img/header.jpg);
-        background-size:cover;
-        position: absolute;   
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
-    }
-
-    h1{
-        position: relative;
-        font-family:'Keania One',sans-serif;
-        font-weight:400;
-        font-size: 96px;
-        text-align: center;
-        margin-top: 90px;
-        line-height: 117px;
-        color: $color-primario;
-    }
-    h2{
-        position: relative;
-        font-family:'K2D',sans-serif;
-        font-weight: 100%;
-        font-size: 24px;
-        line-height: 31px;
-        margin-bottom: 60px;
-        text-align: center;
-        color: $color-secundario;
-    }
-    
-    
-}
-
-.menu{
-    width:auto;
-    height: auto;
-    display: inline;
-    margin: 10px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
-    color:  $color-primario;
-    transition:background 1s;
-    border-radius: 5px;
-
-    &:hover{
-        background:  $color-primario;
-    }
-    a:hover{
-        color: white;
+    @media (max-width:900px){
+        .pie__copyright{
+            font-size: 9px;
+        }
+        .pie__marca{
+            font-size: 13px;
+        }
+        .pie__descripcion{
+            font-size:8px;
+        }
+        .pie__iconos{
+            width: auto;
+            height: auto;
+            display: inline-block;
+            margin-top: 3px;
+        }
     }
     
 }
-/*transformacion al pasar mouse por menu*/
 
-.menu__iconos{
-    width: auto;
-    height: auto;
-    display: inline;  
-    margin: 3px;  
-}
-.menu__iconos--modifier{
-    font-size: 28px;
-    color:$color-primario;
-    margin-right: 4px;
-
-    &:hover{
-        animation: mover 0.3s;
-        animation-iteration-count: infinite;
-    }
-}
-
-
-
-
-/*Pagina Principal*/
-
-
-.resumen{
-    #resumen{
-        grid-area: resumen;
-    }
-    #foto_resumen{
-        grid-area: foto_resumen;
-    }
-    
-    width: auto;
-    height:520px;
-    display: grid;
-    align-items: center;
-    margin-top: 30px;
-    grid-template-areas: 
-    "resumen foto_resumen ";
-    grid-template-columns:1.5fr 2fr;
-    grid-template-rows:1fr;
-    justify-items: center;
-}
-
-.texto__resumen{
-    width: 515px;
-    height: 186px;
-    justify-self: center;
-    border-top: solid 2px $color-secundario;
-    border-bottom: solid 2px $color-secundario;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 31px;
-    color: $color-primario;
-
-
-}
-.imagen__resumen{
-    width: 596px;
-    height: 459px;
-    border-radius:10px;
-    justify-self: center;
-
-}
-
-.clientes{
-    width: auto;
-    height: 600px;
-    margin-top: 100px;
-    align-items: center;
-
-}
-
-.clientes__texto{
-    width: 500px;
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 31px;
-    border-top: solid 1px $color-secundario;
-    border-bottom: solid 1px $color-secundario;
-    color: $color-primario;
-}
-.clientes__grid{
-    #cliente_1{
-        grid-area:cliente_1;
-    }
-    #cliente_2{
-        grid-area:cliente_2;
-    }
-    #cliente_3{
-        grid-area:cliente_3;
-    }
-    #cliente_4{
-        grid-area:cliente_4;
-    }
-    #cliente_5{
-        grid-area:cliente_5;
-    }
-    #cliente_6{
-        grid-area: cliente_6;
-    }
-    display: grid;
-    grid-template-areas: 
-    ". cliente_1 cliente_2 cliente_3 ."
-    ". cliente_4 cliente_5 cliente_6 .";
-    grid-template-columns:0.5fr 0.7fr 0.7fr 0.7fr 0.5fr;
-    grid-template-rows:1fr 1fr;
-    justify-items: center;
-    margin-top: 20px;
-}
-.clientes__img{
-    width: 255px;
-    height: 192px;
-    justify-self: center;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    margin-right: 10px;
-}
-
-
-
-/*Pagina Quienes Somos*/
-.QuienesSomos{
-    #QuienesSomos_titulo{
-        grid-area:QuienesSomos_titulo;
-    }
-    #QuienesSomos_parrafo{
-        grid-area:QuienesSomos_parrafo;
-    }
-    
-    #QuienesSomos_imagen{
-        grid-area: QuienesSomos_imagen;
-    }
-    width: auto;
-    height: 600px;
-    display: grid;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    grid-template-areas: 
-                "QuienesSomos_titulo QuienesSomos_imagen"
-                "QuienesSomos_parrafo QuienesSomos_imagen";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-    
-}
-
-.QuienesSomos__titulo{
-    margin: 40px 0px 0px 20px;
-    width:80%;
-    height: 60px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 31px;
-    color: $color-primario;
-    justify-items: center;
-}
-
-.QuienesSomos__parrafo{
-    width:90%;
-    margin: 0px 0px 0px 20px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: $color-primario;
-
-}
-
-.QuienesSomos__parrafo--modifier{
-    font-family: 'Keania One',sans-serif;
-    font-style: bold;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 24px;
-}
-
-.QuienesSomos__imagen{
-    width: 400px;
-    height: 500px;
-    border-radius: 9px;
-    align-self: center;
-
-}
-
-/*Pagina Vision*/
-
-.Vision{
-    #Vision_titulo{
-        grid-area:Vision_titulo;
-    }
-    #Vision_parrafo{
-        grid-area:Vision_parrafo;
-    }
-    #Vision_imagen{
-        grid-area:Vision_imagen;
-    }
-    width: auto;
-    height: 600px;
-    display: grid;
-    grid-template-areas: 
-                "Vision_titulo Vision_imagen"
-                "Vision_parrafo Vision_imagen";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 3fr;
-    justify-items: center;
-}
-
-
-.Vision__titulo{
-   
-    width: 90%;
-    height: 104px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 31px;
-    color: $color-primario;
-    align-self: center;
-}
-
-.Vision__parrafo{
-    
-    width: 90%;
-    height: 130px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: $color-primario;
-
-}
-
-
-.Vision__parrafo--modifier{
-    font-family: 'Keania One',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-}
-
-.Vision__imagen{
-    width: 420px;
-    height: 450px;
-    border-radius: 9px;
-    margin-top: 20px;
-}
-
-/*Pagina Servicios*/
-
-.Servicios{
-    #Servicios_titulo_1{
-        grid-area: Servicios_titulo_1;
-    }
-    #Servicios_lista_1{
-        grid-area: Servicios_lista_1;
-    }
-    #Servicios_titulo_2{
-        grid-area: Servicios_titulo_2;
-    }
-    #Servicios_lista_2{
-        grid-area: Servicios_lista_2;
-    }
-    width: auto;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display:grid;
-    grid-template-areas: 
-    "Servicios_titulo_1 Servicios_titulo_2"
-    "Servicios_lista_1 Servicios_lista_2";
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:0.3fr 0.3fr;
-    justify-items: center;
-    
-}
-
-.Servicios__titulo{
-    width: auto;
-    height: auto;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 42px;
-    text-align: center;
-    color: $color-primario;
-    justify-self: center;
-}
-.Servicios__lista{
-    width: auto;
-    height: auto;
-    margin-left: 40px;
-    font-family: 'K2D';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: $color-primario;
-    justify-self: center;
-
-}
-
-.Servicios--modifier{
-    border-left: solid 2px $color-secundario;
-}
-
-/*Pagina Proyectos*/
-
-.Proyectos{
-    #Proyectos_titulo_1{
-        grid-area: Proyectos_titulo_1;
-    }
-    #Proyectos_titulo_2{
-        grid-area:Proyectos_titulo_2;
-    }
-    #Proyectos_titulo_3{
-        grid-area:Proyectos_titulo_3;
-    }
-    #Proyectos_parrafo_1{
-        grid-area:Proyectos_parrafo_1;
-    }
-    #Proyectos_parrafo_2{
-        grid-area: Proyectos_parrafo_2;
-    }
-    #Proyectos_parrafo_3{
-        grid-area: Proyectos_parrafo_3;
-    }
-    width: auto;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-areas: 
-    "Proyectos_titulo_1 Proyectos_titulo_2 Proyectos_titulo_3"
-    "Proyectos_parrafo_1 Proyectos_parrafo_2 Proyectos_parrafo_3";
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:0.3fr 0.3fr;
-    justify-items: center;
-
-}
-
-.Proyectos__titulo{
-    width:auto;
-    height:auto;
-    margin-left: 30px;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 42px;
-    text-align: center;
-    color: $color-primario;
-}
-.Proyectos__parrafo{
-    width:auto;
-    height:auto;
-    margin-left: 30px;
-    font-family: 'K2D';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: $color-primario;
-}
-.Proyectos--modifier{
-    border-left: solid 2px $color-secundario;
-    padding-left: 10px;
-}
-
-/*Pagina Contacto*/
-
-.Contacto{
-    width: auto;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.Contacto--modifier{
-    border-left: solid 2px $color-secundario;
-    padding-left: 20px;
-}
-
-.Contacto__titulo{
-    width: auto;
-    height: auto;
-    text-align: left;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 42px;
-    color: $color-primario;
-}
-
-.Contacto__parrafo{
-    width: auto;
-    height: 50%;
-    text-align: left;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 26px;
-    color: $color-primario;
-
-}
-
-.Contacto__telefono{
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 42px;
-    color: $color-primario;
-}
-.Contacto__telefono--modifier{
-    font-size: 62px;
-}
-
-
-.Contacto__formulario--texto{
-    width: auto;
-    height: auto;
-    font-family: 'K2D';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 31px;
-    color: $color-primario;
-}
-
-.Contacto__formulario--respuesta{
-    width: 400px;
-    height: auto;
-    background: $color-terciario;
-    border: 1px solid $color-secundario;
-}
-
-.Contacto__boton{
-    width: 168px;
-    height: auto;
-    font-family: 'K2D',sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: 42px;
-    border-radius: 9px;
-    background: $color-primario;
-    color: white;
-    text-align: center;
-}
 
 /*Media Query's*/
-@media (max-width:1200px){
-    .texto__resumen{
-        height: 130px;
-        font-size: 15px;
-    }
-    .imagen__resumen{
-        width: 360px;
-        height: 300px;
-    }
-}
-@media (max-width:900px){
-    h1{   
-        font-size: 60px;
-    }
-    h2{
-        font-size: 20px;
-    }
 
-    .menu{
-        font-size: 15px;
-        margin: 5px;
-    
-    }
-    .menu__iconos--modifier{
-        font-size: 15px;
-    }   
-    .pie__copyright{
-        font-size: 9px;
-    }
-    .pie__marca{
-        font-size: 13px;
-    }
-    .pie__descripcion{
-        font-size:8px;
-    }
-    .pie__iconos{
-        width: auto;
-        height: auto;
-        display: inline-block;
-        margin-top: 3px;
-    }
-
-    .resumen{
-        width: auto;
-        height:520px;
-        grid-template-areas: 
-        "resumen"
-        "foto_resumen ";
-        grid-template-columns:1fr;
-        grid-template-rows:1fr;
-        justify-items: center;
-    }
-    
-    .texto__resumen{
-        height: 130px;
-        font-size: 15px;
-    }
-    .imagen__resumen{
-        width: 496px;
-        height: 359px;
-    }
-
-    .QuienesSomos__titulo{
-        font-size: 23px;
-        padding-bottom: 10px;
-        height: 118px;
-    }
-    
-    .QuienesSomos__parrafo{
-        font-size: 15px;
-    }
-    
-    .QuienesSomos__parrafo--modifier{
-        font-size: 15px;
-    }
-    
-    .QuienesSomos__imagen{
-        width: 300px;
-        height: 400px;
-    
-    }
-
-    .clientes__texto{
-        width: 300px;
-        font-size: 15px;
-    }
-
-    .clientes__img{
-        width: 155px;
-        height: 122px;
-    }
-    
-    
-    .clientes__grid{
-        grid-template-areas: 
-        ". cliente_1 cliente_2 ."
-        ". cliente_3 cliente_4 ."
-        ". cliente_5 cliente_6 .";
-        grid-template-columns:0.5fr 0.5fr 0.5fr 0.5fr;
-        grid-template-rows:1fr 1fr 1fr;
-    }
-}
 
 @media (max-width:655px){
-    h1{   
-        font-size: 40px;
-    }
-    h2{
-        font-size: 15px;
-    }
 
-    .menu{
-        font-size: 10px;
-    
-    }
-    .menu__iconos{
-        margin: 0px;
-    }
-    .menu__iconos--modifier{
-        font-size: 10px;
-        
-    }   
     
     .resumen{
         width: auto;
