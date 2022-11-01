@@ -4,7 +4,9 @@
   "description": "Pre entrega nro 3 curso desarrollo web",
   "main": "index.js",
   "scripts": {
-    "test": "https://github.com/felipe2293/PreEntrega3-Pantano.git"
+    "test": "https://github.com/felipe2293/PreEntrega3-Pantano.git",
+    "build-css" : "sass sources/styles/styles.scss sources/styles/styles.css",
+    "watch-css" : "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
