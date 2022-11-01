@@ -1,0 +1,23 @@
+{
+  "name": "preentrega3",
+  "version": "1.0.0",
+  "description": "Pre entrega nro 3 curso desarrollo web",
+  "main": "index.js",
+  "scripts": {
+    "test": "https://github.com/felipe2293/PreEntrega3-Pantano.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe2293/PreEntrega3-Pantano.git"
+  },
+  "author": "Felipe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felipe2293/PreEntrega3-Pantano/issues"
+  },
+  "homepage": "https://github.com/felipe2293/PreEntrega3-Pantano#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0"
+  }
+}
