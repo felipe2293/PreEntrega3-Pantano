@@ -2,8 +2,8 @@
 @import url('http://fonts.cdnfonts.com/css/keania-one');
 @import url('http://fonts.cdnfonts.com/css/k2d');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "colores";
 
-$azul:#2F3CB1;
 /*root*/
 *{
     margin:0;
@@ -133,7 +133,7 @@ h1{
     text-align: center;
     margin-top: 90px;
     line-height: 117px;
-    color: $azul;
+    color: $color-primario;
 
 
 }
@@ -145,7 +145,7 @@ h2{
     line-height: 31px;
     margin-bottom: 60px;
     text-align: center;
-    color: #000000;
+    color: $color-secundario;
 }
 
 
@@ -157,24 +157,26 @@ nav{
     flex-direction: row;
     justify-content:space-between;
     align-items: center;
-    background-color:#DADADA ;
+    background-color:$color-terciario;
    
 }
 a{
-    color: $azul ;
+    color: $color-primario ;
     text-decoration: none;
+
+    &:link{
+        color: $color-primario;
+        text-decoration: none;
+    }
 }
-a:link{
-    color: $azul;
-    text-decoration: none;
-}
+
 
 
 footer{
     width: auto;
     height: 80px;
     padding: 5px;
-    background-color: #DADADA;
+    background-color: $color-terciario;
     display: grid;
     grid-template-areas: 
                         ". titulo_footer ."
@@ -199,20 +201,23 @@ footer{
                         ". subtitulo .";
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows:1fr 1fr;
+
+    /*opacidad a la imagen sin que afecte al texto*/
+    &::before{
+        content: "";
+        background-image:url(../../sources/img/header.jpg);
+        background-size:cover;
+        position: absolute;   
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.7;
+    }
     
 }
-/*opacidad a la imagen sin que afecte al texto*/
-.encabezado::before{
-    content: "";
-    background-image:url(../../sources/img/header.jpg);
-    background-size:cover;
-    position: absolute;   
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.7;
-}
+
+
 .encabezado__imagen{
     width: 100%;
     height: 400px;
@@ -228,13 +233,13 @@ footer{
     font-weight: 600;
     font-size: 20px;
     line-height: 26px;
-    color:  $azul;
+    color:  $color-primario;
     transition:background 1s;
 
 }
 /*transformacion al pasar mouse por menu*/
 .menu:hover{
-    background:  $azul;
+    background:  $color-primario;
     border-radius: 5px;
 }
 .menu,a:hover{
@@ -248,16 +253,14 @@ footer{
 }
 .menu__iconos--modifier{
     font-size: 28px;
-    color:$azul;
+    color:$color-primario;
     margin-right: 4px;
+
+    &:hover{
+        animation: mover 0.3s;
+        animation-iteration-count: infinite;
+    }
 }
-
-.menu__iconos--modifier:hover{
-    animation: mover 0.3s;
-    animation-iteration-count: infinite;
-}
-
-
 
 
 .pie__copyright{
@@ -269,7 +272,7 @@ footer{
     font-size: 14px;
     line-height: 18px;
     text-align: start;
-    color: $azul;
+    color: $color-primario;
 }
 .pie__marca{
     width: 100%;
@@ -280,7 +283,7 @@ footer{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 .pie__descripcion{
     width: 100%;
@@ -292,19 +295,19 @@ footer{
     font-size: 12px;
     line-height: 16px;
     text-align: center;   
-    color: #2F3CB1;
+    color: $color-primario;
 }
 .pie__iconos{
     width: auto;
     height: auto;
     display: inline-block;
     margin-top: 3px;
-}
-.pie__iconos:hover{
-    animation: mover 0.3s;
-    animation-iteration-count: infinite;
-}
 
+    &:hover{
+        animation: mover 0.3s;
+        animation-iteration-count: infinite;
+    }
+}
 
 .pie__centrar{
     margin-left: 0%;
@@ -331,14 +334,14 @@ footer{
     width: 515px;
     height: 186px;
     justify-self: center;
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+    border-top: solid 2px $color-secundario;
+    border-bottom: solid 2px $color-secundario;
     font-family: 'K2D',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 31px;
-    color: #2F3CB1;
+    color: $color-primario;
 
 
 }
@@ -368,9 +371,9 @@ footer{
     font-weight: 400;
     font-size: 24px;
     line-height: 31px;
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
-    color: #2F3CB1;
+    border-top: solid 1px $color-secundario;
+    border-bottom: solid 1px $color-secundario;
+    color: $color-primario;
 }
 .clientes__grid{
     display: grid;
@@ -417,7 +420,7 @@ footer{
     font-weight: 400;
     font-size: 32px;
     line-height: 31px;
-    color: #2F3CB1;
+    color: $color-primario;
     justify-items: center;
 }
 
@@ -429,7 +432,7 @@ footer{
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #2F3CB1;
+    color: $color-primario;
 
 }
 
@@ -473,7 +476,7 @@ footer{
     font-weight: 400;
     font-size: 32px;
     line-height: 31px;
-    color: #2F3CB1;
+    color: $color-primario;
     align-self: center;
 }
 
@@ -486,7 +489,7 @@ footer{
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #2F3CB1;
+    color: $color-primario;
 
 }
 
@@ -532,7 +535,7 @@ footer{
     font-size: 32px;
     line-height: 42px;
     text-align: center;
-    color: #2F3CB1;
+    color: $color-primario;
     justify-self: center;
 }
 .Servicios__lista{
@@ -544,13 +547,13 @@ footer{
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #2F3CB1;
+    color: $color-primario;
     justify-self: center;
 
 }
 
 .Servicios--modifier{
-    border-left: solid 2px black;
+    border-left: solid 2px $color-secundario;
 }
 
 /*Pagina Proyectos*/
@@ -580,7 +583,7 @@ footer{
     font-size: 32px;
     line-height: 42px;
     text-align: center;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 .Proyectos__parrafo{
     width:auto;
@@ -591,10 +594,10 @@ footer{
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 .Proyectos--modifier{
-    border-left: solid 2px black;
+    border-left: solid 2px $color-secundario;
     padding-left: 10px;
 }
 
@@ -608,7 +611,7 @@ footer{
 }
 
 .Contacto--modifier{
-    border-left: solid 2px black;
+    border-left: solid 2px $color-secundario;
     padding-left: 20px;
 }
 
@@ -621,7 +624,7 @@ footer{
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 
 .Contacto__parrafo{
@@ -633,7 +636,7 @@ footer{
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
-    color: #2F3CB1;
+    color: $color-primario;
 
 }
 
@@ -643,7 +646,7 @@ footer{
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 .Contacto__telefono--modifier{
     font-size: 62px;
@@ -658,14 +661,14 @@ footer{
     font-weight: 400;
     font-size: 24px;
     line-height: 31px;
-    color: #2F3CB1;
+    color: $color-primario;
 }
 
 .Contacto__formulario--respuesta{
     width: 400px;
     height: auto;
-    background: #D9D9D9;
-    border: 1px solid #000000;
+    background: $color-terciario;
+    border: 1px solid $color-secundario;
 }
 
 .Contacto__boton{
@@ -677,7 +680,7 @@ footer{
     font-size: 30px;
     line-height: 42px;
     border-radius: 9px;
-    background: #2F3CB1;
+    background: $color-primario;
     color: white;
     text-align: center;
 }

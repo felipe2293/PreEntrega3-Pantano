@@ -189,7 +189,6 @@ a {
   color: #2F3CB1;
   text-decoration: none;
 }
-
 a:link {
   color: #2F3CB1;
   text-decoration: none;
@@ -217,9 +216,8 @@ footer {
   grid-template-areas: ". titulo ." ". subtitulo .";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
+  /*opacidad a la imagen sin que afecte al texto*/
 }
-
-/*opacidad a la imagen sin que afecte al texto*/
 .encabezado::before {
   content: "";
   background-image: url(../../sources/img/header.jpg);
@@ -273,7 +271,6 @@ footer {
   color: #2F3CB1;
   margin-right: 4px;
 }
-
 .menu__iconos--modifier:hover {
   animation: mover 0.3s;
   animation-iteration-count: infinite;
@@ -322,7 +319,6 @@ footer {
   display: inline-block;
   margin-top: 3px;
 }
-
 .pie__iconos:hover {
   animation: mover 0.3s;
   animation-iteration-count: infinite;
@@ -349,8 +345,8 @@ footer {
   width: 515px;
   height: 186px;
   justify-self: center;
-  border-top: solid 2px black;
-  border-bottom: solid 2px black;
+  border-top: solid 2px #000000;
+  border-bottom: solid 2px #000000;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -383,8 +379,8 @@ footer {
   font-weight: 400;
   font-size: 24px;
   line-height: 31px;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
+  border-top: solid 1px #000000;
+  border-bottom: solid 1px #000000;
   color: #2F3CB1;
 }
 
@@ -546,7 +542,7 @@ footer {
 }
 
 .Servicios--modifier {
-  border-left: solid 2px black;
+  border-left: solid 2px #000000;
 }
 
 /*Pagina Proyectos*/
@@ -588,7 +584,7 @@ footer {
 }
 
 .Proyectos--modifier {
-  border-left: solid 2px black;
+  border-left: solid 2px #000000;
   padding-left: 10px;
 }
 
@@ -601,7 +597,7 @@ footer {
 }
 
 .Contacto--modifier {
-  border-left: solid 2px black;
+  border-left: solid 2px #000000;
   padding-left: 20px;
 }
 
@@ -656,7 +652,7 @@ footer {
 .Contacto__formulario--respuesta {
   width: 400px;
   height: auto;
-  background: #D9D9D9;
+  background: #DADADA;
   border: 1px solid #000000;
 }
 
