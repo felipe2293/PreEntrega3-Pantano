@@ -8,127 +8,6 @@
   padding: 0;
 }
 
-/*ID'S*/
-#titulo {
-  grid-area: titulo;
-}
-
-#subtitulo {
-  grid-area: subtitulo;
-}
-
-#titulo_footer {
-  grid-area: titulo_footer;
-}
-
-#subtitulo_footer {
-  grid-area: subtitulo_footer;
-}
-
-#iconos_footer {
-  grid-area: iconos_footer;
-}
-
-#copyright_footer {
-  grid-area: copyright_footer;
-}
-
-#resumen {
-  grid-area: resumen;
-}
-
-#foto_resumen {
-  grid-area: foto_resumen;
-}
-
-#cliente_1 {
-  grid-area: cliente_1;
-}
-
-#cliente_2 {
-  grid-area: cliente_2;
-}
-
-#cliente_3 {
-  grid-area: cliente_3;
-}
-
-#cliente_4 {
-  grid-area: cliente_4;
-}
-
-#cliente_5 {
-  grid-area: cliente_5;
-}
-
-#cliente_6 {
-  grid-area: cliente_6;
-}
-
-#QuienesSomos_titulo {
-  grid-area: QuienesSomos_titulo;
-}
-
-#QuienesSomos_parrafo {
-  grid-area: QuienesSomos_parrafo;
-}
-
-#QuienesSomos_imagen {
-  grid-area: QuienesSomos_imagen;
-}
-
-#Vision_titulo {
-  grid-area: Vision_titulo;
-}
-
-#Vision_parrafo {
-  grid-area: Vision_parrafo;
-}
-
-#Vision_imagen {
-  grid-area: Vision_imagen;
-}
-
-#Servicios_titulo_1 {
-  grid-area: Servicios_titulo_1;
-}
-
-#Servicios_lista_1 {
-  grid-area: Servicios_lista_1;
-}
-
-#Servicios_titulo_2 {
-  grid-area: Servicios_titulo_2;
-}
-
-#Servicios_lista_2 {
-  grid-area: Servicios_lista_2;
-}
-
-#Proyectos_titulo_1 {
-  grid-area: Proyectos_titulo_1;
-}
-
-#Proyectos_titulo_2 {
-  grid-area: Proyectos_titulo_2;
-}
-
-#Proyectos_titulo_3 {
-  grid-area: Proyectos_titulo_3;
-}
-
-#Proyectos_parrafo_1 {
-  grid-area: Proyectos_parrafo_1;
-}
-
-#Proyectos_parrafo_2 {
-  grid-area: Proyectos_parrafo_2;
-}
-
-#Proyectos_parrafo_3 {
-  grid-area: Proyectos_parrafo_3;
-}
-
 /*Etiquetas*/
 /*Elimino caracteristicas que agrega bootstrap*/
 p {
@@ -138,9 +17,6 @@ p {
 dl, ol, ul {
   margin-top: 0;
   margin-bottom: 0rem;
-}
-
-ol, ul {
   padding-left: 0rem;
 }
 
@@ -152,28 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Elimino caracteristicas que agrega bootstrap*/
-h1 {
-  position: relative;
-  font-family: "Keania One", sans-serif;
-  font-weight: 400;
-  font-size: 96px;
-  text-align: center;
-  margin-top: 90px;
-  line-height: 117px;
-  color: #2F3CB1;
-}
-
-h2 {
-  position: relative;
-  font-family: "K2D", sans-serif;
-  font-weight: 100%;
-  font-size: 24px;
-  line-height: 31px;
-  margin-bottom: 60px;
-  text-align: center;
-  color: #000000;
-}
-
 nav {
   width: 100%;
   height: 40px;
@@ -184,12 +38,11 @@ nav {
   align-items: center;
   background-color: #DADADA;
 }
-
-a {
+nav a {
   color: #2F3CB1;
   text-decoration: none;
 }
-a:link {
+nav a:link {
   color: #2F3CB1;
   text-decoration: none;
 }
@@ -203,6 +56,65 @@ footer {
   grid-template-areas: ". titulo_footer ." ". subtitulo_footer ." ". iconos_footer ." "copyright_footer . .";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+footer #titulo_footer {
+  grid-area: titulo_footer;
+}
+footer #subtitulo_footer {
+  grid-area: subtitulo_footer;
+}
+footer #iconos_footer {
+  grid-area: iconos_footer;
+}
+footer #copyright_footer {
+  grid-area: copyright_footer;
+}
+footer .pie__copyright {
+  width: 100%;
+  height: 18px;
+  font-family: "K2D", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: start;
+  color: #2F3CB1;
+}
+footer .pie__marca {
+  width: 100%;
+  height: 19px;
+  font-family: "Keania One", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #2F3CB1;
+}
+footer .pie__descripcion {
+  width: 100%;
+  height: 16px;
+  margin-top: 3px;
+  font-family: "K2D";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #2F3CB1;
+}
+footer .pie__iconos {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  margin-top: 3px;
+}
+footer .pie__iconos:hover {
+  animation: mover 0.3s;
+  animation-iteration-count: infinite;
+}
+footer .pie__centrar {
+  margin-left: 0%;
 }
 
 /*Clases*/
@@ -218,6 +130,12 @@ footer {
   grid-template-rows: 1fr 1fr;
   /*opacidad a la imagen sin que afecte al texto*/
 }
+.encabezado #titulo {
+  grid-area: titulo;
+}
+.encabezado #subtitulo {
+  grid-area: subtitulo;
+}
 .encabezado::before {
   content: "";
   background-image: url(../../sources/img/header.jpg);
@@ -229,10 +147,25 @@ footer {
   left: 0px;
   opacity: 0.7;
 }
-
-.encabezado__imagen {
-  width: 100%;
-  height: 400px;
+.encabezado h1 {
+  position: relative;
+  font-family: "Keania One", sans-serif;
+  font-weight: 400;
+  font-size: 96px;
+  text-align: center;
+  margin-top: 90px;
+  line-height: 117px;
+  color: #2F3CB1;
+}
+.encabezado h2 {
+  position: relative;
+  font-family: "K2D", sans-serif;
+  font-weight: 100%;
+  font-size: 24px;
+  line-height: 31px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #000000;
 }
 
 .menu {
@@ -247,18 +180,16 @@ footer {
   line-height: 26px;
   color: #2F3CB1;
   transition: background 1s;
-}
-
-/*transformacion al pasar mouse por menu*/
-.menu:hover {
-  background: #2F3CB1;
   border-radius: 5px;
 }
-
-.menu, a:hover {
+.menu:hover {
+  background: #2F3CB1;
+}
+.menu a:hover {
   color: white;
 }
 
+/*transformacion al pasar mouse por menu*/
 .menu__iconos {
   width: auto;
   height: auto;
@@ -276,58 +207,6 @@ footer {
   animation-iteration-count: infinite;
 }
 
-.pie__copyright {
-  width: 100%;
-  height: 18px;
-  font-family: "K2D", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: start;
-  color: #2F3CB1;
-}
-
-.pie__marca {
-  width: 100%;
-  height: 19px;
-  font-family: "Keania One", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  color: #2F3CB1;
-}
-
-.pie__descripcion {
-  width: 100%;
-  height: 16px;
-  margin-top: 3px;
-  font-family: "K2D";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: center;
-  color: #2F3CB1;
-}
-
-.pie__iconos {
-  width: auto;
-  height: auto;
-  display: inline-block;
-  margin-top: 3px;
-}
-.pie__iconos:hover {
-  animation: mover 0.3s;
-  animation-iteration-count: infinite;
-}
-
-.pie__centrar {
-  margin-left: 0%;
-}
-
 /*Pagina Principal*/
 .resumen {
   width: auto;
@@ -339,6 +218,12 @@ footer {
   grid-template-columns: 1.5fr 2fr;
   grid-template-rows: 1fr;
   justify-items: center;
+}
+.resumen #resumen {
+  grid-area: resumen;
+}
+.resumen #foto_resumen {
+  grid-area: foto_resumen;
 }
 
 .texto__resumen {
@@ -392,6 +277,24 @@ footer {
   justify-items: center;
   margin-top: 20px;
 }
+.clientes__grid #cliente_1 {
+  grid-area: cliente_1;
+}
+.clientes__grid #cliente_2 {
+  grid-area: cliente_2;
+}
+.clientes__grid #cliente_3 {
+  grid-area: cliente_3;
+}
+.clientes__grid #cliente_4 {
+  grid-area: cliente_4;
+}
+.clientes__grid #cliente_5 {
+  grid-area: cliente_5;
+}
+.clientes__grid #cliente_6 {
+  grid-area: cliente_6;
+}
 
 .clientes__img {
   width: 255px;
@@ -412,6 +315,15 @@ footer {
   grid-template-areas: "QuienesSomos_titulo QuienesSomos_imagen" "QuienesSomos_parrafo QuienesSomos_imagen";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2fr;
+}
+.QuienesSomos #QuienesSomos_titulo {
+  grid-area: QuienesSomos_titulo;
+}
+.QuienesSomos #QuienesSomos_parrafo {
+  grid-area: QuienesSomos_parrafo;
+}
+.QuienesSomos #QuienesSomos_imagen {
+  grid-area: QuienesSomos_imagen;
 }
 
 .QuienesSomos__titulo {
@@ -462,6 +374,15 @@ footer {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr;
   justify-items: center;
+}
+.Vision #Vision_titulo {
+  grid-area: Vision_titulo;
+}
+.Vision #Vision_parrafo {
+  grid-area: Vision_parrafo;
+}
+.Vision #Vision_imagen {
+  grid-area: Vision_imagen;
 }
 
 .Vision__titulo {
@@ -514,6 +435,18 @@ footer {
   grid-template-rows: 0.3fr 0.3fr;
   justify-items: center;
 }
+.Servicios #Servicios_titulo_1 {
+  grid-area: Servicios_titulo_1;
+}
+.Servicios #Servicios_lista_1 {
+  grid-area: Servicios_lista_1;
+}
+.Servicios #Servicios_titulo_2 {
+  grid-area: Servicios_titulo_2;
+}
+.Servicios #Servicios_lista_2 {
+  grid-area: Servicios_lista_2;
+}
 
 .Servicios__titulo {
   width: auto;
@@ -556,6 +489,24 @@ footer {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0.3fr 0.3fr;
   justify-items: center;
+}
+.Proyectos #Proyectos_titulo_1 {
+  grid-area: Proyectos_titulo_1;
+}
+.Proyectos #Proyectos_titulo_2 {
+  grid-area: Proyectos_titulo_2;
+}
+.Proyectos #Proyectos_titulo_3 {
+  grid-area: Proyectos_titulo_3;
+}
+.Proyectos #Proyectos_parrafo_1 {
+  grid-area: Proyectos_parrafo_1;
+}
+.Proyectos #Proyectos_parrafo_2 {
+  grid-area: Proyectos_parrafo_2;
+}
+.Proyectos #Proyectos_parrafo_3 {
+  grid-area: Proyectos_parrafo_3;
 }
 
 .Proyectos__titulo {
