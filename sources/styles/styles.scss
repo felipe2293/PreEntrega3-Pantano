@@ -221,7 +221,7 @@ main{
         #foto_resumen{
             grid-area: foto_resumen;
         }
-        @include diseño(auto,520px,0px,0px 0px 0px 30px,grid);
+        @include diseño(auto,520px,0px,30px 0px 0px 0px,grid);
         align-items: center;
         grid-template-areas: 
         "resumen foto_resumen ";
