@@ -28,104 +28,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Elimino caracteristicas que agrega bootstrap*/
-nav {
-  width: 100%;
-  height: 40px;
-  padding: 6px 0px 0px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #DADADA;
-  /*transformacion al pasar mouse por menu*/
-}
-nav a {
-  color: #2F3CB1;
-  text-decoration: none;
-}
-nav a:link {
-  color: #2F3CB1;
-  text-decoration: none;
-}
-nav .menu {
-  width: auto;
-  height: auto;
-  display: inline;
-  margin: 10px;
-  font-family: "K2D", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
-  color: #2F3CB1;
-  transition: background 1s;
-  border-radius: 5px;
-}
-nav .menu:hover {
-  background: #2F3CB1;
-}
-nav .menu a:hover {
-  color: white;
-}
-nav .menu__iconos {
-  width: auto;
-  height: auto;
-  display: inline;
-  margin: 3px;
-}
-nav .menu__iconos--modifier {
-  font-size: 28px;
-  color: #2F3CB1;
-  margin-right: 4px;
-}
-nav .menu__iconos--modifier:hover {
-  animation: mover 0.3s;
-  animation-iteration-count: infinite;
-}
-@media (max-width: 900px) {
-  nav .menu {
-    font-size: 15px;
-    margin: 5px;
-  }
-  nav .menu__iconos--modifier {
-    font-size: 15px;
-  }
-}
-@media (max-width: 655px) {
-  nav .menu {
-    font-size: 10px;
-  }
-  nav .menu__iconos {
-    margin: 0px;
-  }
-  nav .menu__iconos--modifier {
-    font-size: 10px;
-  }
-}
-@media (max-width: 480px) {
-  nav .menu {
-    font-size: 8px;
-  }
-  nav .menu__iconos {
-    margin: 0px;
-  }
-  nav .menu__iconos--modifier {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav {
-    padding: 0;
-    height: 20px;
-  }
-}
 header .encabezado {
-  position: relative;
-  height: 400px;
   width: 100%;
-  align-items: center;
+  height: 400px;
+  padding: 0px;
+  margin: 0px;
   display: grid;
+  position: relative;
+  align-items: center;
   grid-template-areas: ". titulo ." ". subtitulo .";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -193,12 +103,108 @@ header .encabezado h2 {
   }
 }
 
+nav {
+  width: 100%;
+  height: 40px;
+  padding: 6px 0px 0px 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DADADA;
+  /*transformacion al pasar mouse por menu*/
+}
+nav a {
+  color: #2F3CB1;
+  text-decoration: none;
+}
+nav a:link {
+  color: #2F3CB1;
+  text-decoration: none;
+}
+nav .menu {
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin: 10px;
+  display: inline;
+  font-family: "K2D", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 26px;
+  color: #2F3CB1;
+  transition: background 1s;
+  border-radius: 5px;
+}
+nav .menu:hover {
+  background: #2F3CB1;
+}
+nav .menu a:hover {
+  color: white;
+}
+nav .menu__iconos {
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin: 3px;
+  display: inline;
+}
+nav .menu__iconos--modifier {
+  font-size: 28px;
+  color: #2F3CB1;
+  margin-right: 4px;
+}
+nav .menu__iconos--modifier:hover {
+  animation: mover 0.3s;
+  animation-iteration-count: infinite;
+}
+@media (max-width: 900px) {
+  nav .menu {
+    font-size: 15px;
+    margin: 5px;
+  }
+  nav .menu__iconos--modifier {
+    font-size: 15px;
+  }
+}
+@media (max-width: 655px) {
+  nav .menu {
+    font-size: 10px;
+  }
+  nav .menu__iconos {
+    margin: 0px;
+  }
+  nav .menu__iconos--modifier {
+    font-size: 10px;
+  }
+}
+@media (max-width: 480px) {
+  nav .menu {
+    font-size: 8px;
+  }
+  nav .menu__iconos {
+    margin: 0px;
+  }
+  nav .menu__iconos--modifier {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0;
+    height: 20px;
+  }
+}
 main .resumen {
   width: auto;
   height: 520px;
+  padding: 0px;
+  margin: 0px 0px 0px 30px;
   display: grid;
   align-items: center;
-  margin-top: 30px;
   grid-template-areas: "resumen foto_resumen ";
   grid-template-columns: 1.5fr 2fr;
   grid-template-rows: 1fr;
@@ -213,6 +219,9 @@ main .resumen #foto_resumen {
 main .resumen .texto__resumen {
   width: 515px;
   height: 186px;
+  padding: 0px;
+  margin: 0px;
+  display: block;
   justify-self: center;
   border-top: solid 2px #000000;
   border-bottom: solid 2px #000000;
@@ -291,14 +300,18 @@ main .resumen .imagen__resumen {
 main .clientes {
   width: auto;
   height: auto;
-  margin-top: 100px;
+  padding: 0px;
+  margin: 100px 0px 0px 0px;
+  display: block;
   align-items: center;
 }
 main .clientes .clientes__texto {
   width: 500px;
+  height: auto;
+  padding: 0px;
+  margin: auto;
   display: flex;
   justify-content: space-around;
-  margin: auto;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -367,9 +380,9 @@ main .clientes .clientes__grid .clientes__img {
 main .QuienesSomos {
   width: auto;
   height: auto;
+  padding: 0px;
+  margin: 50px 0px 60px 0px;
   display: grid;
-  margin-top: 50px;
-  margin-bottom: 60px;
   grid-template-areas: "QuienesSomos_titulo QuienesSomos_imagen" "QuienesSomos_parrafo QuienesSomos_imagen";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2fr;
@@ -384,9 +397,11 @@ main .QuienesSomos #QuienesSomos_imagen {
   grid-area: QuienesSomos_imagen;
 }
 main .QuienesSomos .QuienesSomos__titulo {
-  margin: 40px 0px 0px 20px;
   width: 80%;
   height: 60px;
+  padding: 0px;
+  margin: 40px 0px 0px 20px;
+  display: block;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -397,7 +412,10 @@ main .QuienesSomos .QuienesSomos__titulo {
 }
 main .QuienesSomos .QuienesSomos__parrafo {
   width: 90%;
+  height: auto;
+  padding: 0px;
   margin: 0px 0px 0px 20px;
+  display: block;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -476,7 +494,9 @@ main .QuienesSomos .QuienesSomos__imagen {
 }
 main .Vision {
   width: auto;
-  height: 600px;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
   display: grid;
   grid-template-areas: "Vision_titulo Vision_imagen" "Vision_parrafo Vision_imagen";
   grid-template-columns: 1fr 1fr;
@@ -494,7 +514,7 @@ main .Vision #Vision_imagen {
 }
 main .Vision .Vision__titulo {
   width: 90%;
-  height: 104px;
+  height: auto;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -525,12 +545,13 @@ main .Vision .Vision__imagen {
   height: 450px;
   border-radius: 9px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 main .Servicios {
   width: auto;
   height: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding: 0px;
+  margin: 50px 0px 50px 0px;
   display: grid;
   grid-template-areas: "Servicios_titulo_1 Servicios_titulo_2" "Servicios_lista_1 Servicios_lista_2";
   grid-template-columns: 1fr 1fr;
@@ -797,7 +818,6 @@ footer .pie__centrar {
   }
 }
 
-/*Media Query's*/
 @keyframes mover {
   0% {
     transform: translate(0px, 1px) rotate(0deg);

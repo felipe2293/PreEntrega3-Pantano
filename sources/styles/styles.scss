@@ -2,7 +2,13 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import "colores";
 @import "tipografia";
-
+@mixin diseño($widht,$height,$padding,$margin,$display) {
+    width: $widht;
+    height: $height;
+    padding:$padding;
+    margin:$margin;
+    display:$display;
+}
 /*root*/
 *{
     margin:0;
@@ -31,110 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*Elimino caracteristicas que agrega bootstrap*/
 
-nav{
-    width: 100%;
-    height: 40px; 
-    padding: 6px 0px 0px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-    background-color:$color-terciario;
-    a{
-        color: $color-primario ;
-        text-decoration: none;
-    
-        &:link{
-            color: $color-primario;
-            text-decoration: none;
-        }
-    }
-    .menu{
-        width:auto;
-        height: auto;
-        display: inline;
-        margin: 10px;
-        font-family: $letra-texto;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 26px;
-        color:  $color-primario;
-        transition:background 1s;
-        border-radius: 5px;
-    
-        &:hover{
-            background:  $color-primario;
-        }
-        a:hover{
-            color: white;
-        }
-        
-    }
-    /*transformacion al pasar mouse por menu*/
-    
-    .menu__iconos{
-        width: auto;
-        height: auto;
-        display: inline;  
-        margin: 3px;  
-    }
-    .menu__iconos--modifier{
-        font-size: 28px;
-        color:$color-primario;
-        margin-right: 4px;
-    
-        &:hover{
-            animation: mover 0.3s;
-            animation-iteration-count: infinite;
-        }
-    }
-    @media (max-width:900px){
-   
-        .menu{
-            font-size: 15px;
-            margin: 5px;
-        
-        }
-        .menu__iconos--modifier{
-            font-size: 15px;
-        }   
-    }
-    @media (max-width:655px){
 
-        .menu{
-            font-size: 10px;
-        
-        }
-        .menu__iconos{
-            margin: 0px;
-        }
-        .menu__iconos--modifier{
-            font-size: 10px;
-            
-        }   
-    }
-    @media (max-width:480px){
-        .menu{
-            font-size: 8px;
-        
-        }
-        .menu__iconos{
-            margin: 0px;
-        }
-        .menu__iconos--modifier{
-            font-size: 10px;
-            
-        }
-    }
-}
-@media (max-width:480px){
-    
-    nav{
-        padding: 0;
-        height: 20px;
-    }
-}
 header{
     .encabezado{
         #titulo{
@@ -143,12 +46,9 @@ header{
         #subtitulo{
             grid-area:subtitulo;
         }
-    
+        @include diseño(100%,400px,0px,0px,grid);
         position: relative;
-        height: 400px;
-        width: 100%;
         align-items: center;
-        display: grid;
         grid-template-areas: 
                             ". titulo ."
                             ". subtitulo .";
@@ -217,7 +117,101 @@ header{
         
     }
 }
+nav{
+    @include diseño(100%,40px,6px 0px 0px 0px,0px,flex);
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    background-color:$color-terciario;
+    a{
+        color: $color-primario ;
+        text-decoration: none;
+    
+        &:link{
+            color: $color-primario;
+            text-decoration: none;
+        }
+    }
+    .menu{
+        @include diseño(auto,auto,0px,10px,inline);
+        font-family: $letra-texto;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color:  $color-primario;
+        transition:background 1s;
+        border-radius: 5px;
+    
+        &:hover{
+            background:  $color-primario;
+        }
+        a:hover{
+            color: white;
+        }
+        
+    }
+    /*transformacion al pasar mouse por menu*/
+    
+    .menu__iconos{
+        @include diseño(auto,auto,0px,3px,inline);
+    }
+    .menu__iconos--modifier{
+        font-size: 28px;
+        color:$color-primario;
+        margin-right: 4px;
+    
+        &:hover{
+            animation: mover 0.3s;
+            animation-iteration-count: infinite;
+        }
+    }
+    @media (max-width:900px){
+   
+        .menu{
+            font-size: 15px;
+            margin: 5px;
+        
+        }
+        .menu__iconos--modifier{
+            font-size: 15px;
+        }   
+    }
+    @media (max-width:655px){
 
+        .menu{
+            font-size: 10px;
+        
+        }
+        .menu__iconos{
+            margin: 0px;
+        }
+        .menu__iconos--modifier{
+            font-size: 10px;
+            
+        }   
+    }
+    @media (max-width:480px){
+        .menu{
+            font-size: 8px;
+        
+        }
+        .menu__iconos{
+            margin: 0px;
+        }
+        .menu__iconos--modifier{
+            font-size: 10px;
+            
+        }
+    }
+}
+@media (max-width:480px){
+    
+    nav{
+        padding: 0;
+        height: 20px;
+    }
+}
 main{
     
     .resumen{
@@ -227,12 +221,8 @@ main{
         #foto_resumen{
             grid-area: foto_resumen;
         }
-        
-        width: auto;
-        height:520px;
-        display: grid;
+        @include diseño(auto,520px,0px,0px 0px 0px 30px,grid);
         align-items: center;
-        margin-top: 30px;
         grid-template-areas: 
         "resumen foto_resumen ";
         grid-template-columns:1.5fr 2fr;
@@ -240,8 +230,7 @@ main{
         justify-items: center;
 
         .texto__resumen{
-            width: 515px;
-            height: 186px;
+            @include diseño(515px,186px,0px,0px,block);
             justify-self: center;
             border-top: solid 2px $color-secundario;
             border-bottom: solid 2px $color-secundario;
@@ -334,16 +323,12 @@ main{
         }
     }
     .clientes{
-        width: auto;
-        height: auto;
-        margin-top: 100px;
+        @include diseño(auto,auto,0px,100px 0px 0px 0px ,block);
         align-items: center;
 
         .clientes__texto{
-            width: 500px;
-            display: flex;
+            @include diseño(500px,auto,0px,auto,flex);
             justify-content: space-around;
-            margin: auto;
             font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
@@ -433,11 +418,7 @@ main{
         #QuienesSomos_imagen{
             grid-area: QuienesSomos_imagen;
         }
-        width: auto;
-        height: auto;
-        display: grid;
-        margin-top: 50px;
-        margin-bottom: 60px;
+        @include diseño(auto,auto,0px,50px 0px 60px 0px,grid);
         grid-template-areas: 
                     "QuienesSomos_titulo QuienesSomos_imagen"
                     "QuienesSomos_parrafo QuienesSomos_imagen";
@@ -445,9 +426,7 @@ main{
         grid-template-rows: 1fr 2fr;
 
         .QuienesSomos__titulo{
-            margin: 40px 0px 0px 20px;
-            width:80%;
-            height: 60px;
+            @include diseño(80%,60px,0px,40px 0px 0px 20px,block);
             font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
@@ -458,16 +437,13 @@ main{
         }
         
         .QuienesSomos__parrafo{
-            width:90%;
-            margin: 0px 0px 0px 20px;
+            @include diseño(90%,auto,0px,0px 0px 0px 20px,block);
             font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
             font-size: 20px;
             line-height: 26px;
             color: $color-primario;
-
-           
         }
         .QuienesSomos__parrafo--modifier{
             font-family: $letra-marca;
@@ -574,9 +550,7 @@ main{
         #Vision_imagen{
             grid-area:Vision_imagen;
         }
-        width: auto;
-        height: 600px;
-        display: grid;
+        @include diseño(auto,auto,0px,0px,grid);
         grid-template-areas: 
                     "Vision_titulo Vision_imagen"
                     "Vision_parrafo Vision_imagen";
@@ -585,9 +559,8 @@ main{
         justify-items: center;
 
         .Vision__titulo{
-       
             width: 90%;
-            height: 104px;
+            height: auto;
             font-family: $letra-texto;
             font-style: normal;
             font-weight: 400;
@@ -598,7 +571,6 @@ main{
         }
         
         .Vision__parrafo{
-            
             width: 90%;
             height: 130px;
             font-family: $letra-texto;
@@ -623,6 +595,7 @@ main{
             height: 450px;
             border-radius: 9px;
             margin-top: 20px;
+            margin-bottom: 20px;
         }
         
     }
@@ -641,11 +614,7 @@ main{
         #Servicios_lista_2{
             grid-area: Servicios_lista_2;
         }
-        width: auto;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        display:grid;
+        @include diseño(auto,auto,0px,50px 0px 50px 0px,grid);
         grid-template-areas: 
         "Servicios_titulo_1 Servicios_titulo_2"
         "Servicios_lista_1 Servicios_lista_2";
@@ -929,11 +898,6 @@ footer{
         }  
     }        
 }
-
-
-/*Media Query's*/
-
-
 @keyframes mover{
     0%{
         transform: translate(0px,1px) rotate(0deg);
