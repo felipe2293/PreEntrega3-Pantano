@@ -34,11 +34,11 @@ header .encabezado {
   padding: 0px;
   margin: 0px;
   display: grid;
-  position: relative;
-  align-items: center;
   grid-template-areas: ". titulo ." ". subtitulo .";
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  position: relative;
   /*opacidad a la imagen sin que afecte al texto*/
 }
 header .encabezado #titulo {
@@ -61,16 +61,18 @@ header .encabezado::before {
 header .encabezado h1 {
   position: relative;
   font-family: "Keania One", sans-serif;
+  font-style: bold;
   font-weight: 400;
   font-size: 96px;
+  line-height: 117px;
   text-align: center;
   margin-top: 90px;
-  line-height: 117px;
   color: #2F3CB1;
 }
 header .encabezado h2 {
   position: relative;
   font-family: "K2D", sans-serif;
+  font-style: normal;
   font-weight: 100%;
   font-size: 24px;
   line-height: 31px;
@@ -280,21 +282,10 @@ main .resumen .imagen__resumen {
     justify-items: center;
   }
 }
-@media (max-width: 655px) {
-  main .resumen {
-    grid-template-areas: "resumen" "foto_resumen ";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-}
 @media (max-width: 480px) {
   main .resumen {
     width: auto;
     height: 520px;
-    grid-template-areas: "resumen" "foto_resumen ";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
   }
 }
 main .clientes {
@@ -322,12 +313,15 @@ main .clientes .clientes__texto {
   color: #2F3CB1;
 }
 main .clientes .clientes__grid {
+  width: auto;
+  height: auto;
+  padding: 0px;
+  margin: 20px 0px 0px 0px;
   display: grid;
   grid-template-areas: ". cliente_1 cliente_2 cliente_3 ." ". cliente_4 cliente_5 cliente_6 .";
   grid-template-columns: 0.5fr 0.7fr 0.7fr 0.7fr 0.5fr;
   grid-template-rows: 1fr 1fr;
   justify-items: center;
-  margin-top: 20px;
 }
 main .clientes .clientes__grid #cliente_1 {
   grid-area: cliente_1;
@@ -350,10 +344,11 @@ main .clientes .clientes__grid #cliente_6 {
 main .clientes .clientes__grid .clientes__img {
   width: 255px;
   height: 192px;
+  padding: 0px;
+  margin: 0px 10px 30px 0px;
+  display: block;
   justify-self: center;
   border-radius: 10px;
-  margin-bottom: 30px;
-  margin-right: 10px;
 }
 @media (max-width: 900px) {
   main .clientes .clientes__grid .clientes__img {
@@ -370,6 +365,7 @@ main .clientes .clientes__grid .clientes__img {
     grid-template-areas: ". cliente_1 cliente_2 ." ". cliente_3 cliente_4 ." ". cliente_5 cliente_6 .";
     grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
     grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
   }
 }
 @media (max-width: 655px) {
@@ -386,6 +382,7 @@ main .QuienesSomos {
   grid-template-areas: "QuienesSomos_titulo QuienesSomos_imagen" "QuienesSomos_parrafo QuienesSomos_imagen";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2fr;
+  justify-items: justify-items;
 }
 main .QuienesSomos #QuienesSomos_titulo {
   grid-area: QuienesSomos_titulo;
@@ -426,6 +423,7 @@ main .QuienesSomos .QuienesSomos__parrafo {
 main .QuienesSomos .QuienesSomos__parrafo--modifier {
   font-family: "Keania One", sans-serif;
   font-style: bold;
+  font-weight: 400;
   font-size: 23px;
   line-height: 24px;
 }
@@ -535,7 +533,7 @@ main .Vision .Vision__parrafo {
 }
 main .Vision .Vision__parrafo .Vision__parrafo--modifier {
   font-family: "Keania One", sans-serif;
-  font-style: normal;
+  font-style: bold;
   font-weight: 400;
   font-size: 23px;
   line-height: 24px;
@@ -586,7 +584,7 @@ main .Servicios .Servicios__lista {
   width: auto;
   height: auto;
   margin-left: 40px;
-  font-family: "K2D";
+  font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -600,8 +598,8 @@ main .Servicios .Servicios--modifier {
 main .Proyectos {
   width: auto;
   height: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  padding: 0px;
+  margin: 50px 0px 50px 0px;
   display: grid;
   grid-template-areas: "Proyectos_titulo_1 Proyectos_titulo_2 Proyectos_titulo_3" "Proyectos_parrafo_1 Proyectos_parrafo_2 Proyectos_parrafo_3";
   grid-template-columns: 1fr 1fr 1fr;
@@ -629,7 +627,9 @@ main .Proyectos #Proyectos_parrafo_3 {
 main .Proyectos .Proyectos__titulo {
   width: auto;
   height: auto;
-  margin-left: 30px;
+  padding: 0px;
+  margin: 0px 0px 0px 30px;
+  display: block;
   font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -641,8 +641,10 @@ main .Proyectos .Proyectos__titulo {
 main .Proyectos .Proyectos__parrafo {
   width: auto;
   height: auto;
-  margin-left: 30px;
-  font-family: "K2D";
+  padding: 0px;
+  margin: 0px 0px 0px 30px;
+  display: block;
+  font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -699,7 +701,7 @@ main .Contacto .Contacto__telefono--modifier {
 main .Contacto .Contacto__formulario--texto {
   width: auto;
   height: auto;
-  font-family: "K2D";
+  font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -730,11 +732,13 @@ footer {
   width: auto;
   height: 80px;
   padding: 5px;
-  background-color: #DADADA;
+  margin: 0px;
   display: grid;
+  background-color: #DADADA;
   grid-template-areas: ". titulo_footer ." ". subtitulo_footer ." ". iconos_footer ." "copyright_footer . .";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: center;
 }
 footer #titulo_footer {
   grid-area: titulo_footer;
@@ -774,7 +778,7 @@ footer .pie__descripcion {
   width: 100%;
   height: 16px;
   margin-top: 3px;
-  font-family: "K2D";
+  font-family: "K2D", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;

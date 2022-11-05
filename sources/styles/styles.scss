@@ -9,6 +9,19 @@
     margin:$margin;
     display:$display;
 }
+@mixin grilla($grid-template-areas,$grid-template-columns,$grid-template-rows,$justify-items){
+    grid-template-areas: $grid-template-areas;
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+    justify-items: $justify-items;
+}
+@mixin diseño_fuente($font-family,$font-style,$font-weight,$font-size,$line-height){
+    font-family: $font-family;
+    font-style:$font-style;
+    font-weight:$font-weight;
+    font-size:$font-size;
+    line-height:$line-height;
+}
 /*root*/
 *{
     margin:0;
@@ -47,13 +60,9 @@ header{
             grid-area:subtitulo;
         }
         @include diseño(100%,400px,0px,0px,grid);
+        @include grilla(". titulo ."
+                        ". subtitulo .",1fr 2fr 1fr,1fr 1fr,center);
         position: relative;
-        align-items: center;
-        grid-template-areas: 
-                            ". titulo ."
-                            ". subtitulo .";
-        grid-template-columns: 1fr 2fr 1fr;
-        grid-template-rows:1fr 1fr;
     
         /*opacidad a la imagen sin que afecte al texto*/
         &::before{
@@ -70,20 +79,14 @@ header{
     
         h1{
             position: relative;
-            font-family:$letra-marca;
-            font-weight:400;
-            font-size: 96px;
+            @include diseño_fuente($letra-marca,bold, 400, 96px, 117px);
             text-align: center;
             margin-top: 90px;
-            line-height: 117px;
             color: $color-primario;
         }
         h2{
             position: relative;
-            font-family:$letra-texto;
-            font-weight: 100%;
-            font-size: 24px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto, normal,100%, 24px, 31px);
             margin-bottom: 60px;
             text-align: center;
             color: $color-secundario;
@@ -134,11 +137,7 @@ nav{
     }
     .menu{
         @include diseño(auto,auto,0px,10px,inline);
-        font-family: $letra-texto;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 26px;
+        @include diseño_fuente( $letra-texto, normal, 600, 20px, 26px);
         color:  $color-primario;
         transition:background 1s;
         border-radius: 5px;
@@ -223,26 +222,16 @@ main{
         }
         @include diseño(auto,520px,0px,30px 0px 0px 0px,grid);
         align-items: center;
-        grid-template-areas: 
-        "resumen foto_resumen ";
-        grid-template-columns:1.5fr 2fr;
-        grid-template-rows:1fr;
-        justify-items: center;
+        @include grilla("resumen foto_resumen ", 1.5fr 2fr, 1fr, center);
 
         .texto__resumen{
             @include diseño(515px,186px,0px,0px,block);
             justify-self: center;
             border-top: solid 2px $color-secundario;
             border-bottom: solid 2px $color-secundario;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto,normal,400, 24px, 31px);
             color: $color-primario;
-            
-                
-        
+
         }
         .imagen__resumen{
             width: 596px;
@@ -291,35 +280,16 @@ main{
         .resumen{
             width: auto;
             height:520px;
-            grid-template-areas: 
-            "resumen"
-            "foto_resumen ";
-            grid-template-columns:1fr;
-            grid-template-rows:1fr;
-            justify-items: center;
+            @include grilla("resumen"
+                            "foto_resumen ", 1fr, 1fr, center);
         }
         
-    }
-    @media (max-width:655px){
-        .resumen{
-            grid-template-areas: 
-            "resumen"
-            "foto_resumen ";
-            grid-template-columns:1fr;
-            grid-template-rows:1fr;
-        }
     }
     @media (max-width:480px){
     
         .resumen{
             width: auto;
             height:520px;
-            grid-template-areas: 
-            "resumen"
-            "foto_resumen ";
-            grid-template-columns:1fr;
-            grid-template-rows:1fr;
-            justify-items: center;
         }
     }
     .clientes{
@@ -329,11 +299,7 @@ main{
         .clientes__texto{
             @include diseño(500px,auto,0px,auto,flex);
             justify-content: space-around;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto, normal, 400, 24px, 31px);
             border-top: solid 1px $color-secundario;
             border-bottom: solid 1px $color-secundario;
             color: $color-primario;
@@ -357,22 +323,14 @@ main{
             #cliente_6{
                 grid-area: cliente_6;
             }
-            display: grid;
-            grid-template-areas: 
-            ". cliente_1 cliente_2 cliente_3 ."
-            ". cliente_4 cliente_5 cliente_6 .";
-            grid-template-columns:0.5fr 0.7fr 0.7fr 0.7fr 0.5fr;
-            grid-template-rows:1fr 1fr;
-            justify-items: center;
-            margin-top: 20px;
+            @include diseño(auto,auto,0px,20px 0px 0px 0px, grid);
+            @include grilla( ". cliente_1 cliente_2 cliente_3 ."
+                             ". cliente_4 cliente_5 cliente_6 .", 0.5fr 0.7fr 0.7fr 0.7fr 0.5fr, 1fr 1fr,center);
 
             .clientes__img{
-                width: 255px;
-                height: 192px;
+                @include diseño(255px,192px,0px,0px 10px 30px 0px,block );
                 justify-self: center;
                 border-radius: 10px;
-                margin-bottom: 30px;
-                margin-right: 10px;
             }
             @media (max-width:900px){
                 .clientes__img{
@@ -389,12 +347,9 @@ main{
             }
             
             .clientes__grid{
-                grid-template-areas: 
-                ". cliente_1 cliente_2 ."
-                ". cliente_3 cliente_4 ."
-                ". cliente_5 cliente_6 .";
-                grid-template-columns:0.5fr 0.5fr 0.5fr 0.5fr;
-                grid-template-rows:1fr 1fr 1fr;
+                @include grilla(". cliente_1 cliente_2 ."
+                                ". cliente_3 cliente_4 ."
+                                ". cliente_5 cliente_6 .",0.5fr 0.5fr 0.5fr 0.5fr, 1fr 1fr 1fr, center);
             }
         }
         @media (max-width:655px){
@@ -419,37 +374,23 @@ main{
             grid-area: QuienesSomos_imagen;
         }
         @include diseño(auto,auto,0px,50px 0px 60px 0px,grid);
-        grid-template-areas: 
-                    "QuienesSomos_titulo QuienesSomos_imagen"
-                    "QuienesSomos_parrafo QuienesSomos_imagen";
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 2fr;
-
+        @include grilla("QuienesSomos_titulo QuienesSomos_imagen"
+                        "QuienesSomos_parrafo QuienesSomos_imagen", 1fr 1fr, 1fr 2fr, justify-items);
+        
         .QuienesSomos__titulo{
             @include diseño(80%,60px,0px,40px 0px 0px 20px,block);
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto, normal, 400, 32px, 31px);
             color: $color-primario;
             justify-items: center;
         }
         
         .QuienesSomos__parrafo{
             @include diseño(90%,auto,0px,0px 0px 0px 20px,block);
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26px;
+            @include diseño_fuente($letra-texto, normal, 400, 20px, 26px);
             color: $color-primario;
         }
         .QuienesSomos__parrafo--modifier{
-            font-family: $letra-marca;
-            font-style: bold;
-            font-size: 23px;
-            line-height: 24px;
+            @include diseño_fuente($letra-marca, bold, 400, 23px, 24px);
         }
         .QuienesSomos__imagen{
             width: 400px;
@@ -529,13 +470,9 @@ main{
         .QuienesSomos{
             margin-top: 20px;
             margin-bottom: 30px;
-            grid-template-areas: 
-                        "QuienesSomos_titulo"
-                        "QuienesSomos_imagen"
-                        "QuienesSomos_parrafo";
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.1fr 1fr 1fr;
-            justify-items: center;
+            @include grilla("QuienesSomos_titulo"
+                            "QuienesSomos_imagen"
+                            "QuienesSomos_parrafo", 1fr, 0.1fr 1fr 1fr, center);
             
         }
     }
@@ -551,21 +488,13 @@ main{
             grid-area:Vision_imagen;
         }
         @include diseño(auto,auto,0px,0px,grid);
-        grid-template-areas: 
-                    "Vision_titulo Vision_imagen"
-                    "Vision_parrafo Vision_imagen";
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 3fr;
-        justify-items: center;
+        @include grilla("Vision_titulo Vision_imagen"
+                        "Vision_parrafo Vision_imagen",1fr 1fr,1fr 3fr, center);
 
         .Vision__titulo{
             width: 90%;
             height: auto;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 32px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto, normal, 400, 32px, 31px);
             color: $color-primario;
             align-self: center;
         }
@@ -573,19 +502,11 @@ main{
         .Vision__parrafo{
             width: 90%;
             height: 130px;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26px;
+            @include diseño_fuente($letra-texto, normal, 400, 20px, 26px);
             color: $color-primario;
 
             .Vision__parrafo--modifier{
-                font-family: $letra-marca;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 23px;
-                line-height: 24px;
+                @include diseño_fuente($letra-marca, bold, 400, 23px, 24px);
             }
         
         }
@@ -615,20 +536,12 @@ main{
             grid-area: Servicios_lista_2;
         }
         @include diseño(auto,auto,0px,50px 0px 50px 0px,grid);
-        grid-template-areas: 
-        "Servicios_titulo_1 Servicios_titulo_2"
-        "Servicios_lista_1 Servicios_lista_2";
-        grid-template-columns:1fr 1fr;
-        grid-template-rows:0.3fr 0.3fr;
-        justify-items: center;
+        @include grilla("Servicios_titulo_1 Servicios_titulo_2"
+                        "Servicios_lista_1 Servicios_lista_2", 1fr 1fr,0.3fr 0.3fr, center);
         .Servicios__titulo{
             width: auto;
             height: auto;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 42px;
+            @include diseño_fuente($letra-texto, normal,600, 32px, 42px);
             text-align: center;
             color: $color-primario;
             justify-self: center;
@@ -637,11 +550,7 @@ main{
             width: auto;
             height: auto;
             margin-left: 40px;
-            font-family: 'K2D';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26px;
+            @include diseño_fuente( $letra-texto, normal, 400, 20px, 26px);
             color: $color-primario;
             justify-self: center;
         
@@ -672,39 +581,19 @@ main{
         #Proyectos_parrafo_3{
             grid-area: Proyectos_parrafo_3;
         }
-        width: auto;
-        height: auto;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        display: grid;
-        grid-template-areas: 
-        "Proyectos_titulo_1 Proyectos_titulo_2 Proyectos_titulo_3"
-        "Proyectos_parrafo_1 Proyectos_parrafo_2 Proyectos_parrafo_3";
-        grid-template-columns:1fr 1fr 1fr;
-        grid-template-rows:0.3fr 0.3fr;
-        justify-items: center;
+        @include diseño(auto,auto,0px,50px 0px 50px 0px ,grid);
+        @include grilla("Proyectos_titulo_1 Proyectos_titulo_2 Proyectos_titulo_3"
+                        "Proyectos_parrafo_1 Proyectos_parrafo_2 Proyectos_parrafo_3",1fr 1fr 1fr,0.3fr 0.3fr,center);
 
         .Proyectos__titulo{
-            width:auto;
-            height:auto;
-            margin-left: 30px;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 42px;
+            @include diseño(auto,auto,0px,0px 0px 0px 30px ,block);
+            @include diseño_fuente($letra-texto, normal, 600, 32px,42px);
             text-align: center;
             color: $color-primario;
         }
         .Proyectos__parrafo{
-            width:auto;
-            height:auto;
-            margin-left: 30px;
-            font-family: 'K2D';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26px;
+            @include diseño(auto,auto,0px,0px 0px 0px 30px ,block);
+            @include diseño_fuente($letra-texto, normal, 400, 20px, 26px);
             color: $color-primario;
         }
         .Proyectos--modifier{
@@ -716,6 +605,7 @@ main{
 
     
     .Contacto{
+        
         width: auto;
         height: auto;
         margin-top: 50px;
@@ -729,11 +619,7 @@ main{
             width: auto;
             height: auto;
             text-align: left;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 42px;
+            @include diseño_fuente( $letra-texto, normal, 600, 32px, 42px);
             color: $color-primario;
         }
         
@@ -741,21 +627,13 @@ main{
             width: auto;
             height: 50%;
             text-align: left;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 26px;
+            @include diseño_fuente($letra-texto, normal, 400, 20px, 26px);
             color: $color-primario;
         
         }
         
         .Contacto__telefono{
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 32px;
-            line-height: 42px;
+            @include diseño_fuente($letra-texto, normal, 600, 32px, 42px);
             color: $color-primario;
         }
         .Contacto__telefono--modifier{
@@ -766,11 +644,7 @@ main{
         .Contacto__formulario--texto{
             width: auto;
             height: auto;
-            font-family: 'K2D';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 31px;
+            @include diseño_fuente($letra-texto, normal, 400, 24px, 31px);
             color: $color-primario;
         }
         
@@ -784,11 +658,7 @@ main{
         .Contacto__boton{
             width: 168px;
             height: auto;
-            font-family: $letra-texto;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 30px;
-            line-height: 42px;
+            @include diseño_fuente($letra-texto, normal, 600, 30px, 42px);
             border-radius: 9px;
             background: $color-primario;
             color: white;
@@ -812,38 +682,24 @@ footer{
     #copyright_footer{
         grid-area:copyright_footer;
     }
-    width: auto;
-    height: 80px;
-    padding: 5px;
+    @include diseño(auto,80px,5px,0px,grid);
     background-color: $color-terciario;
-    display: grid;
-    grid-template-areas: 
-                        ". titulo_footer ."
-                        ". subtitulo_footer ."
-                        ". iconos_footer ."
-                        "copyright_footer . .";
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr 1fr;
-
+    @include grilla(". titulo_footer ."
+                    ". subtitulo_footer ."
+                    ". iconos_footer ."
+                    "copyright_footer . .",1fr 1fr 1fr,1fr 1fr 1fr 1fr, center);
+    
     .pie__copyright{
         width: 100%;
         height:18px;
-        font-family: $letra-texto;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 18px;
+        @include diseño_fuente($letra-texto, normal, 600, 14px, 18px);
         text-align: start;
         color: $color-primario;
     }
     .pie__marca{
         width: 100%;
         height: 19px;
-        font-family: $letra-marca;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
+        @include diseño_fuente( $letra-marca, normal, 400, 16px, 19px);
         text-align: center;
         color: $color-primario;
     }
@@ -851,11 +707,7 @@ footer{
         width: 100%;
         height: 16px;
         margin-top: 3px;
-        font-family: 'K2D';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
+        @include diseño_fuente($letra-texto, normal, 400, 12px, 16px);
         text-align: center;   
         color: $color-primario;
     }
