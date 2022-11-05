@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Elimino caracteristicas que agrega bootstrap*/
+/*Encabezado*/
 header .encabezado {
   width: 100%;
   height: 400px;
@@ -105,6 +106,7 @@ header .encabezado h2 {
   }
 }
 
+/*Barra de Navegacion*/
 nav {
   width: 100%;
   height: 40px;
@@ -199,6 +201,19 @@ nav .menu__iconos--modifier:hover {
     padding: 0;
     height: 20px;
   }
+}
+main {
+  /*Pagina de Incio*/
+  /*Fin pagina de inicio*/
+  /*Pagina Quienes Somos*/
+  /*Fin Pagina Quienes Somos*/
+  /*Pagina Vision*/
+  /*Fin pagina Vision*/
+  /*Pagina Servicios*/
+  /*Fin Pagina Servicios*/
+  /*Pagina Proyectos*/
+  /*Fin Pagina Proyectos*/
+  /*Pagina Contacto*/
 }
 main .resumen {
   width: auto;
@@ -921,6 +936,8 @@ main .Contacto .Contacto__boton {
   }
 }
 
+/*Fin pagina contacto*/
+/*Pie de Pagina*/
 footer {
   width: auto;
   height: 80px;
@@ -1015,6 +1032,8 @@ footer .pie__centrar {
   }
 }
 
+/*Fin pie de pagina*/
+/*Keyframes*/
 @keyframes mover {
   0% {
     transform: translate(0px, 1px) rotate(0deg);
