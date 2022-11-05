@@ -201,6 +201,24 @@ header .encabezado h2 {
   }
 }
 
+/*Keyframes*/
+@keyframes mover {
+  0% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, 3px) rotate(2deg);
+  }
+  75% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+}
 /*Contenido de cada Pagina del sitio WEB*/
 main .resumen {
   width: auto;
@@ -1014,6 +1032,25 @@ footer .pie__centrar {
 @media (max-width: 480px) {
   footer .pie__copyright {
     font-size: 8px;
+  }
+}
+
+/*Keyframes*/
+@keyframes mover {
+  0% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, 3px) rotate(2deg);
+  }
+  75% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0px, 1px) rotate(0deg);
   }
 }
 
