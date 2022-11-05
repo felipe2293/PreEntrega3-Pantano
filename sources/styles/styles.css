@@ -123,6 +123,24 @@ nav .menu__iconos--modifier:hover {
     height: 20px;
   }
 }
+/*Keyframes*/
+@keyframes mover {
+  0% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, 3px) rotate(2deg);
+  }
+  75% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+}
 /*Encabezado*/
 header .encabezado {
   width: 100%;
@@ -201,24 +219,6 @@ header .encabezado h2 {
   }
 }
 
-/*Keyframes*/
-@keyframes mover {
-  0% {
-    transform: translate(0px, 1px) rotate(0deg);
-  }
-  25% {
-    transform: translate(0px, 2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(0px, 3px) rotate(2deg);
-  }
-  75% {
-    transform: translate(0px, 2px) rotate(1deg);
-  }
-  100% {
-    transform: translate(0px, 1px) rotate(0deg);
-  }
-}
 /*Contenido de cada Pagina del sitio WEB*/
 main .resumen {
   width: auto;
@@ -941,6 +941,24 @@ main .Contacto .Contacto__boton {
   }
 }
 
+/*Keyframes*/
+@keyframes mover {
+  0% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+  25% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0px, 3px) rotate(2deg);
+  }
+  75% {
+    transform: translate(0px, 2px) rotate(1deg);
+  }
+  100% {
+    transform: translate(0px, 1px) rotate(0deg);
+  }
+}
 footer {
   width: auto;
   height: 80px;
