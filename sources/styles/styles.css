@@ -202,7 +202,7 @@ nav .menu__iconos--modifier:hover {
     height: 20px;
   }
 }
-
+/*Contenido de cada Pagina del sitio WEB*/
 main .resumen {
   width: auto;
   height: 520px;
@@ -924,8 +924,6 @@ main .Contacto .Contacto__boton {
   }
 }
 
-/*Fin pagina contacto*/
-/*Pie de Pagina*/
 footer {
   width: auto;
   height: 80px;
@@ -1020,7 +1018,6 @@ footer .pie__centrar {
   }
 }
 
-/*Fin pie de pagina*/
 /*Keyframes*/
 @keyframes mover {
   0% {

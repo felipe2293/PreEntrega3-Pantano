@@ -212,8 +212,9 @@ nav{
         height: 20px;
     }
 }
+/*Contenido de cada Pagina del sitio WEB*/
 main{
-    /*Pagina de Incio*/
+    
     .resumen{
         #resumen{
             grid-area: resumen;
@@ -361,10 +362,8 @@ main{
         }
         
     }
-    /*Fin pagina de inicio*/
     
 
-    /*Pagina Quienes Somos*/
     .QuienesSomos{
         #QuienesSomos_titulo{
             grid-area:QuienesSomos_titulo;
@@ -479,9 +478,7 @@ main{
             
         }
     }
-    /*Fin Pagina Quienes Somos*/
 
-    /*Pagina Vision*/
     .Vision{
         #Vision_titulo{
             grid-area:Vision_titulo;
@@ -599,9 +596,7 @@ main{
             
         }
     }
-    /*Fin pagina Vision*/
    
-    /*Pagina Servicios*/
     .Servicios{
         #Servicios_titulo_1{
             grid-area: Servicios_titulo_1;
@@ -684,9 +679,7 @@ main{
 
         }
     }
-    /*Fin Pagina Servicios*/
 
-    /*Pagina Proyectos*/
     .Proyectos{
         #Proyectos_titulo_1{
             grid-area: Proyectos_titulo_1;
@@ -789,9 +782,7 @@ main{
 
     
     }
-    /*Fin Pagina Proyectos*/
 
-    /*Pagina Contacto*/
     .Contacto{
         
         width: auto;
@@ -921,9 +912,7 @@ main{
     }
   
 }
-/*Fin pagina contacto*/
 
-/*Pie de Pagina*/
 footer{
 
     #titulo_footer{
@@ -1006,7 +995,6 @@ footer{
         }  
     }        
 }
-/*Fin pie de pagina*/
 
 /*Keyframes*/
 @keyframes mover{
