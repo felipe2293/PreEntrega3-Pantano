@@ -1,0 +1,21 @@
+/*mixins*/
+@mixin diseño($widht,$height,$padding,$margin,$display) {
+    width: $widht;
+    height: $height;
+    padding:$padding;
+    margin:$margin;
+    display:$display;
+}
+@mixin grilla($grid-template-areas,$grid-template-columns,$grid-template-rows,$justify-items){
+    grid-template-areas: $grid-template-areas;
+    grid-template-columns: $grid-template-columns;
+    grid-template-rows: $grid-template-rows;
+    justify-items: $justify-items;
+}
+@mixin diseño_fuente($font-family,$font-style,$font-weight,$font-size,$line-height){
+    font-family: $font-family;
+    font-style:$font-style;
+    font-weight:$font-weight;
+    font-size:$font-size;
+    line-height:$line-height;
+}

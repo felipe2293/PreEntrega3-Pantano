@@ -1,0 +1,24 @@
+/*root*/
+*{
+    margin:0;
+    padding:0;
+
+}
+/*Elimino caracteristicas que agrega bootstrap*/
+p{
+    margin-bottom: 0rem;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    padding-left: 0rem;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    font-weight: 0px;
+    line-height:0px;
+}
+/*Elimino caracteristicas que agrega bootstrap*/

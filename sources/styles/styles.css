@@ -2,13 +2,12 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.cdnfonts.com/css/keania-one");
 @import url("https://fonts.cdnfonts.com/css/k2d");
-/*root*/
+/*mixins*/ /*root*/
 * {
   margin: 0;
   padding: 0;
 }
 
-/*Etiquetas*/
 /*Elimino caracteristicas que agrega bootstrap*/
 p {
   margin-bottom: 0rem;
@@ -28,85 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*Elimino caracteristicas que agrega bootstrap*/
-/*Encabezado*/
-header .encabezado {
-  width: 100%;
-  height: 400px;
-  padding: 0px;
-  margin: 0px;
-  display: grid;
-  grid-template-areas: ". titulo ." ". subtitulo .";
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-items: center;
-  position: relative;
-  /*opacidad a la imagen sin que afecte al texto*/
-}
-header .encabezado #titulo {
-  grid-area: titulo;
-}
-header .encabezado #subtitulo {
-  grid-area: subtitulo;
-}
-header .encabezado::before {
-  content: "";
-  background-image: url(../../sources/img/header.jpg);
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.7;
-}
-header .encabezado h1 {
-  position: relative;
-  font-family: "Keania One", sans-serif;
-  font-style: bold;
-  font-weight: 400;
-  font-size: 96px;
-  line-height: 117px;
-  text-align: center;
-  margin-top: 90px;
-  color: #2F3CB1;
-}
-header .encabezado h2 {
-  position: relative;
-  font-family: "K2D", sans-serif;
-  font-style: normal;
-  font-weight: 100%;
-  font-size: 24px;
-  line-height: 31px;
-  margin-bottom: 60px;
-  text-align: center;
-  color: #000000;
-}
-@media (max-width: 900px) {
-  header .encabezado h1 {
-    font-size: 60px;
-  }
-  header .encabezado h2 {
-    font-size: 20px;
-  }
-}
-@media (max-width: 655px) {
-  header .encabezado h1 {
-    font-size: 40px;
-  }
-  header .encabezado h2 {
-    font-size: 15px;
-  }
-}
-@media (max-width: 480px) {
-  header .encabezado h1 {
-    font-size: 30px;
-  }
-  header .encabezado h2 {
-    font-size: 12px;
-  }
-}
-
-/*Barra de Navegacion*/
+/*Barra de navegacion*/
 nav {
   width: 100%;
   height: 40px;
@@ -202,6 +123,84 @@ nav .menu__iconos--modifier:hover {
     height: 20px;
   }
 }
+/*Encabezado*/
+header .encabezado {
+  width: 100%;
+  height: 400px;
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  grid-template-areas: ". titulo ." ". subtitulo .";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  position: relative;
+  /*opacidad a la imagen sin que afecte al texto*/
+}
+header .encabezado #titulo {
+  grid-area: titulo;
+}
+header .encabezado #subtitulo {
+  grid-area: subtitulo;
+}
+header .encabezado::before {
+  content: "";
+  background-image: url(../../sources/img/header.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.7;
+}
+header .encabezado h1 {
+  position: relative;
+  font-family: "Keania One", sans-serif;
+  font-style: bold;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 117px;
+  text-align: center;
+  margin-top: 90px;
+  color: #2F3CB1;
+}
+header .encabezado h2 {
+  position: relative;
+  font-family: "K2D", sans-serif;
+  font-style: normal;
+  font-weight: 100%;
+  font-size: 24px;
+  line-height: 31px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #000000;
+}
+@media (max-width: 900px) {
+  header .encabezado h1 {
+    font-size: 60px;
+  }
+  header .encabezado h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 655px) {
+  header .encabezado h1 {
+    font-size: 40px;
+  }
+  header .encabezado h2 {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  header .encabezado h1 {
+    font-size: 30px;
+  }
+  header .encabezado h2 {
+    font-size: 12px;
+  }
+}
+
 /*Contenido de cada Pagina del sitio WEB*/
 main .resumen {
   width: auto;
@@ -1015,25 +1014,6 @@ footer .pie__centrar {
 @media (max-width: 480px) {
   footer .pie__copyright {
     font-size: 8px;
-  }
-}
-
-/*Keyframes*/
-@keyframes mover {
-  0% {
-    transform: translate(0px, 1px) rotate(0deg);
-  }
-  25% {
-    transform: translate(0px, 2px) rotate(1deg);
-  }
-  50% {
-    transform: translate(0px, 3px) rotate(2deg);
-  }
-  75% {
-    transform: translate(0px, 2px) rotate(1deg);
-  }
-  100% {
-    transform: translate(0px, 1px) rotate(0deg);
   }
 }
 

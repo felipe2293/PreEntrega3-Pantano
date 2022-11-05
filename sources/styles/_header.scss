@@ -1,0 +1,70 @@
+/*Encabezado*/
+header{
+    .encabezado{
+        #titulo{
+            grid-area:titulo;
+        }
+        #subtitulo{
+            grid-area:subtitulo;
+        }
+        @include diseño(100%,400px,0px,0px,grid);
+        @include grilla(". titulo ."
+                        ". subtitulo .",1fr 2fr 1fr,1fr 1fr,center);
+        position: relative;
+    
+        /*opacidad a la imagen sin que afecte al texto*/
+        &::before{
+            content: "";
+            background-image:url(../../sources/img/header.jpg);
+            background-size:cover;
+            position: absolute;   
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.7;
+        }
+    
+        h1{
+            position: relative;
+            @include diseño_fuente($letra-marca,bold, 400, 96px, 117px);
+            text-align: center;
+            margin-top: 90px;
+            color: $color-primario;
+        }
+        h2{
+            position: relative;
+            @include diseño_fuente($letra-texto, normal,100%, 24px, 31px);
+            margin-bottom: 60px;
+            text-align: center;
+            color: $color-secundario;
+        }
+        @media (max-width:900px){
+            h1{   
+                font-size: 60px;
+            }
+            h2{
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width:655px){
+            h1{   
+                font-size: 40px;
+            }
+            h2{
+                font-size: 15px;
+            }
+        }
+        @media (max-width:480px){
+            h1{   
+                font-size: 30px;
+            }
+            h2{
+                font-size: 12px;
+            }
+        }
+        
+        
+    }
+}
